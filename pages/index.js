@@ -1,16 +1,25 @@
-import { Navbar, Footer, Breadcrumb, OrderProduct } from "@components/shared";
 import { Carousel, BannerStart } from "@components/Home";
-import { WalletInfo, EthPriceDisplay } from "@components/web3";
-import { Card } from "@components/order";
+import { WalletInfo } from "@components/web3";
 import { BaseLayout } from "@components/layout";
+import { getAllMerch } from "content/myMerch/fetcher";
+import { List } from "@components/product";
 
-export default function Home() {
+export default function Home({ merch }) {
   return (
     <BaseLayout>
       <Carousel />
       <WalletInfo />
       <BannerStart />
-      <Breadcrumb />
+      <List merch={merch} />
     </BaseLayout>
   );
+}
+
+export function getStaticProps() {
+  const { data, myMerchMap } = getAllMerch();
+  return {
+    props: {
+      merch: data,
+    },
+  };
 }
