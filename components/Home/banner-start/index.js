@@ -6,7 +6,7 @@ export default function BannerStart() {
           <div className="col-lg-6 col-md-6">
             <div className="single_banner">
               <div className="banner_thumb">
-                <a href="shop.html">
+                <a rel="noopener noreferrer" href="shop.html">
                   <img src="assets/img/bg/banner1.jpg" alt="" />
                 </a>
                 <div className="banner_text1">
@@ -14,7 +14,7 @@ export default function BannerStart() {
                     <h3>
                       Men’s <br /> Collections
                     </h3>
-                    <a href="shop.html">shop now</a>
+                    <a rel="noopener noreferrer" href="shop.html">shop now</a>
                   </div>
                 </div>
               </div>
@@ -23,7 +23,7 @@ export default function BannerStart() {
           <div className="col-lg-6 col-md-6">
             <div className="single_banner">
               <div className="banner_thumb">
-                <a href="shop.html">
+                <a rel="noopener noreferrer" href="shop.html">
                   <img src="assets/img/bg/banner2.jpg" alt="" />
                 </a>
                 <div className="banner_text1">
@@ -31,7 +31,7 @@ export default function BannerStart() {
                     <h3>
                       Women’s <br /> Collections
                     </h3>
-                    <a href="shop.html">shop now</a>
+                    <a rel="noopener noreferrer" href="shop.html">shop now</a>
                   </div>
                 </div>
               </div>

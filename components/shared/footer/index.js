@@ -43,27 +43,27 @@ export default function Footer() {
               <div className="footer_social">
                 <ul>
                   <li>
-                    <a href="#">
+                    <a rel="noopener noreferrer" href="#">
                       <i className="fa fa-facebook" aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a rel="noopener noreferrer" href="#">
                       <i className="fa fa-twitter" aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a rel="noopener noreferrer" href="#">
                       <i className="fa fa-youtube-play" aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a rel="noopener noreferrer" href="#">
                       <i className="fa fa-google" aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a rel="noopener noreferrer" href="#">
                       <i className="fa fa-instagram" aria-hidden="true" />
                     </a>
                   </li>
@@ -77,14 +77,22 @@ export default function Footer() {
             <div className="col-lg-6 col-md-7">
               <div className="footer_bottom_left">
                 <div className="footer_logo">
-                  <a href="index.html">
+                  <a rel="noopener noreferrer" href="index.html">
                     <img src="assets/img/logo/logo2.png" alt="" />
                   </a>
                 </div>
                 <div className="copyright_area">
                   <p>
-                    Copyright © 2021 <a href="index.html">Braga</a>.{" "}
-                    <a href="https://hasthemes.com/" target="_blank">
+                    Copyright © 2021{" "}
+                    <a rel="noopener noreferrer" href="index.html">
+                      Braga
+                    </a>
+                    .{" "}
+                    <a
+                      rel="noopener noreferrer"
+                      href="https://hasthemes.com/"
+                      target="_blank"
+                    >
                       All rights reserved.
                     </a>
                   </p>
@@ -93,7 +101,7 @@ export default function Footer() {
             </div>
             <div className="col-lg-6 col-md-5">
               <div className="footer_paypal text-right">
-                <a href="#">
+                <a rel="noopener noreferrer" href="#">
                   <img src="assets/img/icon/payment.png" alt="" />
                 </a>
               </div>

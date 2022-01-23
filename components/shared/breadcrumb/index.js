@@ -8,7 +8,7 @@ export default function Breadcrumb() {
               <h3>Home</h3>
               <ul>
                 <li>
-                  <a href="index.html">home</a>
+                  <a rel="noopener noreferrer" href="index.html">home</a>
                 </li>
                 <li>shop</li>
               </ul>

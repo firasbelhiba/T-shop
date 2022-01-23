@@ -60,6 +60,7 @@ export default function OrderProduct() {
             <div className="sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow-md">
                 <a
+                  rel="noopener noreferrer"
                   href="#"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-gray-100 md:py-4 md:text-md md:px-10"
                 >
@@ -83,6 +84,7 @@ export default function OrderProduct() {
                   <div className="flex lg:justify-start">
                     <div className="rounded-md shadow">
                       <a
+                        rel="noopener noreferrer"
                         href="#"
                         className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:px-10"
                       >
