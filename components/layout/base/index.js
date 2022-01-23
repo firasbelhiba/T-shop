@@ -8,6 +8,7 @@ export default function BaseLayout({ children }) {
       {children}
       <Footer />
 
+
       <Script
         src="assets/js/vendor/jquery-3.4.1.min.js"
         strategy="beforeInteractive"
