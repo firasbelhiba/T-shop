@@ -11,10 +11,7 @@ export default function List({ merch }) {
               href="#"
             >
               <div className="product-image">
-                <img
-                  src={m.coverImage}
-                  alt={m.title}
-                />
+                <img src={m.coverImage} alt={m.title} />
               </div>
               <div className="product-content">
                 <div className="product-info">
@@ -27,14 +24,6 @@ export default function List({ merch }) {
               </div>
             </a>
           ))}
-        </div>
-      </div>
-      <div className="credits">
-        <div className="responsive-container">
-          <h3>Illustrations by Freepik</h3>
-          <a href="https://www.freepik.com/" target="_blank">
-            Check out their amazing work - www.freepik.com
-          </a>
         </div>
       </div>
     </div>
