@@ -1,8 +1,7 @@
-import { Navbar, Footer, Breadcrumb , OrderProduct} from "@components/shared";
+import { Navbar, Footer, Breadcrumb, OrderProduct } from "@components/shared";
 import { Carousel, BannerStart } from "@components/Home";
 import { WalletInfo, EthPriceDisplay } from "@components/web3";
-import Script from 'next/script'
-
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <BannerStart />
       <Breadcrumb />
       <Footer />
-
+      {/* 
       <Script src="assets/js/vendor/jquery-3.4.1.min.js"></Script>
 
       <Script src="assets/js/popper.js"></Script>
@@ -27,7 +26,7 @@ export default function Home() {
       <Script src="assets/js/isotope.pkgd.min.js"></Script>
       <Script src="assets/js/plugins.js"></Script>
 
-      <Script src="assets/js/main.js"></Script>
+      <Script src="assets/js/main.js"></Script> */}
     </div>
   );
 }
