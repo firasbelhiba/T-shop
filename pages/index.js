@@ -12,21 +12,20 @@ export default function Home() {
       <BannerStart />
       <Breadcrumb />
       <Footer />
-      {/* 
-      <Script src="assets/js/vendor/jquery-3.4.1.min.js"></Script>
-
-      <Script src="assets/js/popper.js"></Script>
-      <Script src="assets/js/bootstrap.min.js"></Script>
-      <Script src="assets/js/owl.carousel.min.js"></Script>
-      <Script src="assets/js/slick.min.js"></Script>
-      <Script src="assets/js/jquery.magnific-popup.min.js"></Script>
-      <Script src="assets/js/jquery.countdown.js"></Script>
-      <Script src="assets/js/jquery.ui.js"></Script>
-      <Script src="assets/js/jquery.elevatezoom.js"></Script>
-      <Script src="assets/js/isotope.pkgd.min.js"></Script>
-      <Script src="assets/js/plugins.js"></Script>
-
-      <Script src="assets/js/main.js"></Script> */}
+      
+      <Script src="assets/js/vendor/jquery-3.4.1.min.js" />
+      <Script src="assets/js/popper.js" />
+      <Script src="assets/js/bootstrap.min.js" />
+      <Script src="assets/js/owl.carousel.min.js" />
+      <Script src="assets/js/slick.min.js" />
+      <Script src="assets/js/jquery.magnific-popup.min.js" />
+      <Script src="assets/js/jquery.countdown.js" />
+      <Script src="assets/js/jquery.ui.js" />
+      <Script src="assets/js/jquery.elevatezoom.js" />
+      <Script src="assets/js/isotope.pkgd.min.js" />
+      <Script src="assets/js/plugins.js" />
+      <Script src="assets/js/main.js" />
+      
     </div>
   );
 }
