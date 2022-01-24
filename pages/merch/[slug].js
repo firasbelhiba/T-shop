@@ -39,4 +39,4 @@ export function getStaticProps({ params }) {
   };
 }
 
-//Product.Layout = BaseLayout;
+Product.Layout = BaseLayout;
