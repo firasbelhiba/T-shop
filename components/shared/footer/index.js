@@ -78,7 +78,7 @@ export default function Footer() {
               <div className="footer_bottom_left">
                 <div className="footer_logo">
                   <a rel="noopener noreferrer" href="index.html">
-                    <img src="assets/img/logo/logo2.png" alt="" />
+                    <img src="/assets/img/logo/logo2.png" alt="" />
                   </a>
                 </div>
                 <div className="copyright_area">
@@ -102,7 +102,7 @@ export default function Footer() {
             <div className="col-lg-6 col-md-5">
               <div className="footer_paypal text-right">
                 <a rel="noopener noreferrer" href="#">
-                  <img src="assets/img/icon/payment.png" alt="" />
+                  <img src="/assets/img/icon/payment.png" alt="" />
                 </a>
               </div>
             </div>

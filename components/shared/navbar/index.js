@@ -11,7 +11,7 @@ export default function Navbar() {
             <div className="col-lg-2 col-md-4 offset-md-4 offset-lg-0 col-5 offset-3 col-sm-5">
               <div className="logo">
                 <a rel="noopener noreferrer" href="index.html">
-                  <img src="assets/img/logo/logo.png" alt="" />
+                  <img src="/assets/img/logo/logo.png" alt="" />
                 </a>
               </div>
             </div>
@@ -164,7 +164,7 @@ export default function Navbar() {
           <div className="cart_item">
             <div className="cart_img">
               <a rel="noopener noreferrer" href="#">
-                <img src="assets/img/s-product/product.jpg" alt="" />
+                <img src="/assets/img/s-product/product.jpg" alt="" />
               </a>
             </div>
             <div className="cart_info">
@@ -184,7 +184,7 @@ export default function Navbar() {
           <div className="cart_item">
             <div className="cart_img">
               <a rel="noopener noreferrer" href="#">
-                <img src="assets/img/s-product/product2.jpg" alt="" />
+                <img src="/assets/img/s-product/product2.jpg" alt="" />
               </a>
             </div>
             <div className="cart_info">
