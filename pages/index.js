@@ -6,7 +6,7 @@ import { BaseLayout } from "@components/layout";
 import { useWeb3 } from "@components/providers";
 
 export default function Home({ merch }) {
-  const { web3, isLoading } = useWeb3();
+  //const { web3, isLoading } = useWeb3();
   return (
     <>
       <Carousel />

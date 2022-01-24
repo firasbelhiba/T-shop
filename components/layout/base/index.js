@@ -4,7 +4,7 @@ import { useWeb3, Web3Provider } from "@components/providers";
 
 export default function BaseLayout({ children }) {
   return (
-    <Web3Provider>
+    <>
       <Navbar />
       {children}
       <Footer />
@@ -40,6 +40,6 @@ export default function BaseLayout({ children }) {
       />
       <Script src="/assets/js/plugins.js" strategy="beforeInteractive" />
       <Script src="/assets/js/main.js" strategy="beforeInteractive" />
-    </Web3Provider>
+    </>
   );
 }
