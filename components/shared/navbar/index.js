@@ -1,6 +1,8 @@
+import { useWeb3 } from "@components/providers";
 import Link from "next/link";
 
 export default function Navbar() {
+  console.log(useWeb3());
   return (
     <header>
       <div className="main_header sticky-header">

@@ -5,14 +5,14 @@ import { getAllMerch } from "@content/myMerch/fetcher";
 
 export default function Product({ merch }) {
   return (
-    <BaseLayout>
+    <>
       <Breadcrumb />
       <ProductDetails
         title={merch.title}
         description={merch.description}
         image={merch.coverImage}
       />
-    </BaseLayout>
+    </>
   );
 }
 
@@ -38,3 +38,5 @@ export function getStaticProps({ params }) {
     },
   };
 }
+
+Product.Layout = BaseLayout;
