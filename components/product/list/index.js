@@ -11,11 +11,9 @@ export default function List({ merch }) {
               <Link href={`/merch/${m.slug}`}>
                 <a rel="noopener noreferrer" className="product">
                   <div className="product-image">
-                    <Image
+                    <img
                       src={m.coverImage}
                       alt={m.title}
-                      width="400"
-                      height="400"
                     />
                   </div>
                   <div className="product-content">

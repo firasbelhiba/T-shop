@@ -1,4 +1,4 @@
-export default function ProductDetails() {
+export default function ProductDetails({ title, description, image }) {
   return (
     <div className="product_details mb-80">
       <div className="container">
@@ -9,78 +9,11 @@ export default function ProductDetails() {
                 <a rel="noopener noreferrer" href="#">
                   <img
                     id="zoom1"
-                    src="assets/img/product/productbig4.jpg"
-                    data-zoom-image="assets/img/product/productbig1.jpg"
-                    alt="big-1"
+                    src={image}
+                    data-zoom-image={image}
+                    alt={title}
                   />
                 </a>
-              </div>
-              <div className="single-zoom-thumb">
-                <ul
-                  className="s-tab-zoom owl-carousel single-product-active"
-                  id="gallery_01"
-                >
-                  <li>
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      className="elevatezoom-gallery active"
-                      data-update
-                      data-image="assets/img/product/productbig4.jpg"
-                      data-zoom-image="assets/img/product/productbig4.jpg"
-                    >
-                      <img
-                        src="assets/img/product/productbig4.jpg"
-                        alt="zo-th-1"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      className="elevatezoom-gallery active"
-                      data-update
-                      data-image="assets/img/product/productbig1.jpg"
-                      data-zoom-image="assets/img/product/productbig1.jpg"
-                    >
-                      <img
-                        src="assets/img/product/productbig1.jpg"
-                        alt="zo-th-1"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      className="elevatezoom-gallery active"
-                      data-update
-                      data-image="assets/img/product/productbig2.jpg"
-                      data-zoom-image="assets/img/product/productbig2.jpg"
-                    >
-                      <img
-                        src="assets/img/product/productbig2.jpg"
-                        alt="zo-th-1"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      className="elevatezoom-gallery active"
-                      data-update
-                      data-image="assets/img/product/productbig3.jpg"
-                      data-zoom-image="assets/img/product/productbig3.jpg"
-                    >
-                      <img
-                        src="assets/img/product/productbig3.jpg"
-                        alt="zo-th-1"
-                      />
-                    </a>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -90,7 +23,7 @@ export default function ProductDetails() {
                 <div className="productd_title_nav">
                   <h1>
                     <a rel="noopener noreferrer" href="#">
-                      Lorem ipsum dolor sit amet elit
+                      {title}
                     </a>
                   </h1>
                   <div className="product_nav">
@@ -154,14 +87,7 @@ export default function ProductDetails() {
                   <span className="current_price">$48.00</span>
                 </div>
                 <div className="product_desc">
-                  <p>
-                    eget velit. Donec ac tempus ante. Fusce ultricies massa
-                    massa. Fusce aliquam, purus eget sagittis vulputate, sapien
-                    libero hendrerit est, sed commodo augue nisi non neque.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    tempor, lorem et placerat vestibulum, metus nisi posuere
-                    nisl, in{" "}
-                  </p>
+                  <p>{description} </p>
                 </div>
                 <div className="product_variant color">
                   <h3>Available Options</h3>
