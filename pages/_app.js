@@ -1,12 +1,12 @@
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  const Layout = Component.Layout;
+ // const Layout = Component.Layout;
 
   return (
-    <Layout>
+    // <Layout>
+    // </Layout>
       <Component {...pageProps} />
-    </Layout>
   );
 }
 

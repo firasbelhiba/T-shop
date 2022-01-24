@@ -26,4 +26,4 @@ export function getStaticProps() {
   };
 }
 
-Home.Layout = BaseLayout;
+//Home.Layout = BaseLayout;
