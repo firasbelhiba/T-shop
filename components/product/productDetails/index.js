@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProductDetails({ title, description, image }) {
   return (
     <div className="product_details mb-80">
@@ -7,11 +9,13 @@ export default function ProductDetails({ title, description, image }) {
             <div className="product-details-tab">
               <div id="img-1" className="zoomWrapper single-zoom">
                 <a rel="noopener noreferrer" href="#">
-                  <img
+                  <Image
                     id="zoom1"
                     src={image}
                     data-zoom-image={image}
                     alt={title}
+                    width="700"
+                    height="700"
                   />
                 </a>
               </div>

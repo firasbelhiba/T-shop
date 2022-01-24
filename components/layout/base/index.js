@@ -1,9 +1,10 @@
 import { Footer, Navbar } from "@components/shared";
 import Script from "next/script";
+import { Web3Provider } from "@components/providers";
 
 export default function BaseLayout({ children }) {
   return (
-    <div>
+    <Web3Provider>
       <Navbar />
       {children}
       <Footer />
@@ -39,6 +40,6 @@ export default function BaseLayout({ children }) {
       />
       <Script src="/assets/js/plugins.js" strategy="beforeInteractive" />
       <Script src="/assets/js/main.js" strategy="beforeInteractive" />
-    </div>
+    </Web3Provider>
   );
 }
