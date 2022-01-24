@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <header>
@@ -17,192 +19,33 @@ export default function Navbar() {
                 <nav>
                   <ul>
                     <li>
-                      <a
-                        rel="noopener noreferrer"
-                        className="active"
-                        href="index.html"
-                      >
-                        home
-                        <i className="fa fa-angle-down" />
-                      </a>
-                      <ul className="sub_menu">
-                        <li>
-                          <a rel="noopener noreferrer" href="index.html">
-                            Home shop 1
-                          </a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="index-2.html">
-                            Home shop 2
-                          </a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="index-3.html">
-                            Home shop 3
-                          </a>
-                        </li>
-                      </ul>
+                      <Link href="/">
+                        <a rel="noopener noreferrer" className="active">
+                          Home
+                        </a>
+                      </Link>
                     </li>
                     <li className="mega_items">
-                      <a rel="noopener noreferrer" href="shop.html">
-                        shop
-                        <i className="fa fa-angle-down" />
+                      <Link href="/marketplace">
+                        <a rel="noopener noreferrer">MarketPlace</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blogs">
+                        <a rel="noopener noreferrer">Blogs</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <a rel="noopener noreferrer" href="contact.html">
+                        {" "}
+                        Contact Us
                       </a>
-                      <div className="mega_menu">
-                        <ul className="mega_menu_inner">
-                          <li>
-                            <a rel="noopener noreferrer" href="#">
-                              Shop Layouts
-                            </a>
-                            <ul>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="shop-fullwidth.html"
-                                >
-                                  Full Width
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="shop-fullwidth-list.html"
-                                >
-                                  Full Width list
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="shop-right-sidebar.html"
-                                >
-                                  Right Sidebar{" "}
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="shop-right-sidebar-list.html"
-                                >
-                                  {" "}
-                                  Right Sidebar list
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="shop-list.html"
-                                >
-                                  List View
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a rel="noopener noreferrer" href="#">
-                              other Pages
-                            </a>
-                            <ul>
-                              <li>
-                                <a rel="noopener noreferrer" href="cart.html">
-                                  cart
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="wishlist.html"
-                                >
-                                  Wishlist
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="checkout.html"
-                                >
-                                  Checkout
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="my-account.html"
-                                >
-                                  my account
-                                </a>
-                              </li>
-                              <li>
-                                <a rel="noopener noreferrer" href="404.html">
-                                  Error 404
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a rel="noopener noreferrer" href="#">
-                              Product Types
-                            </a>
-                            <ul>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="product-details.html"
-                                >
-                                  product details
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="product-sidebar.html"
-                                >
-                                  product sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="product-grouped.html"
-                                >
-                                  product grouped
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  rel="noopener noreferrer"
-                                  href="variable-product.html"
-                                >
-                                  product variable
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
                     </li>
                     <li>
-                      <a rel="noopener noreferrer" href="blog.html">
-                        blog
-                        <i className="fa fa-angle-down" />
+                      <a rel="noopener noreferrer" href="about.html">
+                        {" "}
+                        About us
                       </a>
-                      <ul className="sub_menu pages">
-                        <li>
-                          <a rel="noopener noreferrer"href="blog-details.html">blog details</a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="blog-fullwidth.html">blog fullwidth</a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="blog-sidebar.html">blog sidebar</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="contact.html"> Contact Us</a>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="about.html"> About us</a>
                     </li>
                     <li>
                       <a rel="noopener noreferrer" href="#">
@@ -210,22 +53,34 @@ export default function Navbar() {
                       </a>
                       <ul className="sub_menu pages">
                         <li>
-                          <a rel="noopener noreferrer" href="about.html">About Us</a>
+                          <a rel="noopener noreferrer" href="about.html">
+                            About Us
+                          </a>
                         </li>
                         <li>
-                          <a rel="noopener noreferrer" href="services.html">services</a>
+                          <a rel="noopener noreferrer" href="services.html">
+                            services
+                          </a>
                         </li>
                         <li>
-                          <a rel="noopener noreferrer" href="faq.html">Frequently Questions</a>
+                          <a rel="noopener noreferrer" href="faq.html">
+                            Frequently Questions
+                          </a>
                         </li>
                         <li>
-                          <a rel="noopener noreferrer" href="contact.html">contact</a>
+                          <a rel="noopener noreferrer" href="contact.html">
+                            contact
+                          </a>
                         </li>
                         <li>
-                          <a rel="noopener noreferrer" href="login.html">login</a>
+                          <a rel="noopener noreferrer" href="login.html">
+                            login
+                          </a>
                         </li>
                         <li>
-                          <a rel="noopener noreferrer" href="404.html">Error 404</a>
+                          <a rel="noopener noreferrer" href="404.html">
+                            Error 404
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -265,16 +120,24 @@ export default function Navbar() {
                   </a>
                   <ul className="dropdown_currency">
                     <li>
-                      <a rel="noopener noreferrer" href="my-account.html">My account</a>
+                      <a rel="noopener noreferrer" href="my-account.html">
+                        My account
+                      </a>
                     </li>
                     <li>
-                      <a rel="noopener noreferrer" href="#">Order History</a>
+                      <a rel="noopener noreferrer" href="#">
+                        Order History
+                      </a>
                     </li>
                     <li>
-                      <a rel="noopener noreferrer" href="wishlist.html">Wishlist</a>
+                      <a rel="noopener noreferrer" href="wishlist.html">
+                        Wishlist
+                      </a>
                     </li>
                     <li>
-                      <a rel="noopener noreferrer" href="cart.html">Shipping</a>
+                      <a rel="noopener noreferrer" href="cart.html">
+                        Shipping
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -303,7 +166,9 @@ export default function Navbar() {
               </a>
             </div>
             <div className="cart_info">
-              <a rel="noopener noreferrer" href="#">Juicy Couture Tricot</a>
+              <a rel="noopener noreferrer" href="#">
+                Juicy Couture Tricot
+              </a>
               <p>
                 1 x <span> $30.00 </span>
               </p>
@@ -321,7 +186,9 @@ export default function Navbar() {
               </a>
             </div>
             <div className="cart_info">
-              <a rel="noopener noreferrer" href="#">Juicy Couture Juicy</a>
+              <a rel="noopener noreferrer" href="#">
+                Juicy Couture Juicy
+              </a>
               <p>
                 1 x <span> $29.00 </span>
               </p>
