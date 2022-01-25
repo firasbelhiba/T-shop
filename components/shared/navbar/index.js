@@ -1,6 +1,8 @@
+import { useWeb3 } from "@components/providers";
 import Link from "next/link";
 
 export default function Navbar() {
+  const { connect, isLoading, web3 } = useWeb3();
   return (
     <header>
       <div className="main_header sticky-header">
@@ -73,9 +75,7 @@ export default function Navbar() {
                           </a>
                         </li>
                         <li>
-                          <a rel="noopener noreferrer" href="login.html">
-                            login
-                          </a>
+                          <a rel="noopener noreferrer">login</a>
                         </li>
                         <li>
                           <a rel="noopener noreferrer" href="404.html">
@@ -120,8 +120,8 @@ export default function Navbar() {
                   </a>
                   <ul className="dropdown_currency">
                     <li>
-                      <a rel="noopener noreferrer" href="my-account.html">
-                        My account
+                      <a rel="noopener noreferrer" onClick={connect}>
+                        Connect
                       </a>
                     </li>
                     <li>
