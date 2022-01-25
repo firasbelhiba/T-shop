@@ -4,7 +4,7 @@ const DEFAULT_HOOKS = {
   useAccount: () => ({ account: null }),
 };
 
-export const SetupHooks = (web3) => {
+export const setupHooks = (web3) => {
   // if (!web3) {
   //   return DEFAULT_HOOKS;
   // } else
