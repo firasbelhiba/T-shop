@@ -1,7 +1,7 @@
 import { handler as createUseAccount } from "./useAccount";
 
-export function setupHooks(web3) {
+export function setupHooks(...dependencies) {
   return {
-    useAccount: createUseAccount(web3),
+    useAccount: createUseAccount(...dependencies),
   };
 }

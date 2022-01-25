@@ -106,9 +106,15 @@ export default function Navbar() {
                     />
                   </div>
                 ) : isWeb3Loaded ? (
-                  <div className="header_account_list  mini_cart_wrapper">
-                    <Button onClick={connect}>Connect</Button>
-                  </div>
+                  account ? (
+                    <div className="header_account_list  mini_cart_wrapper">
+                      <Button className="cursor-default">Hi There ! </Button>
+                    </div>
+                  ) : (
+                    <div className="header_account_list  mini_cart_wrapper">
+                      <Button onClick={connect}>Connect</Button>
+                    </div>
+                  )
                 ) : (
                   <div className="header_account_list  mini_cart_wrapper">
                     <Button
