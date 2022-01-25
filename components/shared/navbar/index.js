@@ -10,7 +10,6 @@ export default function Navbar() {
   console.log("this is the account", account);
   return (
     <header>
-      {account}
       <div className="main_header sticky-header">
         <div className="container">
           <div className="row align-items-center">
@@ -106,7 +105,7 @@ export default function Navbar() {
                     />
                   </div>
                 ) : isWeb3Loaded ? (
-                  account ? (
+                  account.data ? (
                     <div className="header_account_list  mini_cart_wrapper">
                       <Button className="cursor-default">Hi There ! </Button>
                     </div>
