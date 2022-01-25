@@ -107,7 +107,9 @@ export default function Navbar() {
                 ) : isWeb3Loaded ? (
                   account.data ? (
                     <div className="header_account_list  mini_cart_wrapper">
-                      <Button className="cursor-default">Hi There ! </Button>
+                      <Button className="cursor-default">
+                        Hi There {account.isAdmin && "Admin"} !{" "}
+                      </Button>
                     </div>
                   ) : (
                     <div className="header_account_list  mini_cart_wrapper">
