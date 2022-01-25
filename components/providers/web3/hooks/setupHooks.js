@@ -1,7 +1,7 @@
-import { useAccount } from "./useAccount";
+import { hookAccount } from "./hookAccount";
 
 const DEFAULT_HOOKS = {
-  useAccount: () => ({ account: null }),
+  hookAccount: () => ({ account: null }),
 };
 
 export function setupHooks(web3) {
@@ -9,6 +9,6 @@ export function setupHooks(web3) {
   //   return DEFAULT_HOOKS;
   // } else
   return {
-    useAccount: useAccount(web3),
+    hookAccount: hookAccount(web3),
   };
 }

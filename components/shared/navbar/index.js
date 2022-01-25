@@ -5,7 +5,7 @@ import { ProgressSpinner } from "primereact/progressspinner";
 
 export default function Navbar() {
   const { connect, isLoading, isWeb3Loaded, hooks } = useWeb3();
-  const { account } = hooks.useAccount();
+  const { account } = hooks.hookAccount();
   console.log("this is the account", account);
   return (
     <header>
