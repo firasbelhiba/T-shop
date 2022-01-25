@@ -91,6 +91,24 @@ export default function Navbar() {
             </div>
             <div className="col-lg-2 col-md-4 col-sm-4 col-4">
               <div className="header_account_area">
+                {!isLoading && web3 ? (
+                  <div className="header_account_list  mini_cart_wrapper">
+                    <button
+                      type="button"
+                      onClick={connect}
+                      class="btn btn-outline-dark "
+                    >
+                      <span>Connect</span>
+                    </button>
+                  </div>
+                ) : (
+                  <div className="header_account_list  mini_cart_wrapper">
+                    <button type="button" class="btn btn-outline-dark ">
+                      <span>Install Metamask</span>
+                    </button>
+                  </div>
+                )}
+
                 <div className="header_account_list search_list">
                   <a rel="noopener noreferrer" href="javascript:void(0)">
                     <span className="pe-7s-search" />
@@ -113,6 +131,7 @@ export default function Navbar() {
                     <span className="item_count">2</span>
                   </a>
                 </div>
+
                 <div className="language_currency header_account_list ">
                   <a rel="noopener noreferrer" href="#">
                     {" "}
@@ -146,6 +165,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
       {/*mini cart*/}
       <div className="mini_cart">
         <div className="cart_gallery">
