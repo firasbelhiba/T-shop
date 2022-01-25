@@ -1,8 +1,9 @@
 import { useWeb3 } from "@components/providers";
 import Link from "next/link";
+import { Button } from "@components/shared";
 
 export default function Navbar() {
-  const { connect, isLoading, web3 } = useWeb3();
+  const { connect, isLoading, isWeb3Loaded } = useWeb3();
   return (
     <header>
       <div className="main_header sticky-header">
@@ -91,21 +92,17 @@ export default function Navbar() {
             </div>
             <div className="col-lg-2 col-md-4 col-sm-4 col-4">
               <div className="header_account_area">
-                {!isLoading && web3 ? (
+                {isLoading ? (
                   <div className="header_account_list  mini_cart_wrapper">
-                    <button
-                      type="button"
-                      onClick={connect}
-                      class="btn btn-outline-dark "
-                    >
-                      <span>Connect</span>
-                    </button>
+                    <Button>Loading</Button>
+                  </div>
+                ) : isWeb3Loaded ? (
+                  <div className="header_account_list  mini_cart_wrapper">
+                    <Button onClick={connect}>Connect</Button>
                   </div>
                 ) : (
                   <div className="header_account_list  mini_cart_wrapper">
-                    <button type="button" class="btn btn-outline-dark ">
-                      <span>Install Metamask</span>
-                    </button>
+                    <Button onClick={connect}>Intall Metamask</Button>
                   </div>
                 )}
 
