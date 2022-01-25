@@ -40,6 +40,10 @@ export default function BaseLayout({ children }) {
       />
       <Script src="/assets/js/plugins.js" strategy="beforeInteractive" />
       <Script src="/assets/js/main.js" strategy="beforeInteractive" />
+
+      {/* Primereact  */}
+      <Script src="https://unpkg.com/primereact/core/core.min.js" />
+      <Script src="https://unpkg.com/primereact/progressspinner/progressspinner.min.js" />
     </Web3Provider>
   );
 }

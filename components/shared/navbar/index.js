@@ -1,11 +1,15 @@
 import { useWeb3 } from "@components/providers";
 import Link from "next/link";
 import { Button } from "@components/shared";
+import { ProgressSpinner } from "primereact/progressspinner";
 
 export default function Navbar() {
-  const { connect, isLoading, isWeb3Loaded } = useWeb3();
+  const { connect, isLoading, isWeb3Loaded, hooks } = useWeb3();
+  const { account } = hooks.useAccount();
+  console.log("this is the account", account);
   return (
     <header>
+      {account}
       <div className="main_header sticky-header">
         <div className="container">
           <div className="row align-items-center">
@@ -94,7 +98,11 @@ export default function Navbar() {
               <div className="header_account_area">
                 {isLoading ? (
                   <div className="header_account_list  mini_cart_wrapper">
-                    <Button>Loading</Button>
+                    <ProgressSpinner
+                      style={{ width: "50px", height: "50px" }}
+                      strokeWidth="8"
+                      fill="var(--surface-ground)"
+                    />
                   </div>
                 ) : isWeb3Loaded ? (
                   <div className="header_account_list  mini_cart_wrapper">
@@ -102,7 +110,13 @@ export default function Navbar() {
                   </div>
                 ) : (
                   <div className="header_account_list  mini_cart_wrapper">
-                    <Button onClick={connect}>Intall Metamask</Button>
+                    <Button
+                      onClick={() => {
+                        window.open("https://metamask.io", "_blank");
+                      }}
+                    >
+                      Intall Metamask
+                    </Button>
                   </div>
                 )}
 
