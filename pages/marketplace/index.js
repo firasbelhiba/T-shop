@@ -3,19 +3,14 @@ import { WalletInfo } from "@components/web3";
 import { getAllMerch } from "content/myMerch/fetcher";
 import { List } from "@components/product";
 import { BaseLayout } from "@components/layout";
-import { useWeb3 } from "@components/providers";
+import { useAccount } from "@components/hooks/web3/useAccount";
 
-export default function Home({ merch }) {
-  const { web3, isLoading } = useWeb3();
+export default function Marketplace({ merch }) {
+  const { account } = useAccount();
   return (
     <>
-      {isLoading
-        ? "Is Loading Web3..."
-        : web3
-        ? "Web 3 Ready!"
-        : "Please install metamask on your browser"}
-
       <Carousel />
+      <WalletInfo account={account.data} />
       <BannerStart />
       <List merch={merch} />
     </>
@@ -31,4 +26,4 @@ export function getStaticProps() {
   };
 }
 
-Home.Layout = BaseLayout;
+Marketplace.Layout = BaseLayout;

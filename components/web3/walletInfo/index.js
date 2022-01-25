@@ -1,4 +1,4 @@
-export default function WalletInfo() {
+export default function WalletInfo({ account }) {
   return (
     <div
       className="choseus_area"
@@ -10,7 +10,7 @@ export default function WalletInfo() {
             <div className="single_chose">
               <div className="chose_content">
                 <h3>Hello,</h3>
-                <p>0xd9D5cD41Fe921A743F2b5Fe71CC3070F5C176208</p>
+                <p>{account}</p>
                 <p>I hope you are having a great day!</p>
               </div>
             </div>
