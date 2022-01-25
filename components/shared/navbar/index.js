@@ -2,10 +2,11 @@ import { useWeb3 } from "@components/providers";
 import Link from "next/link";
 import { Button } from "@components/shared";
 import { ProgressSpinner } from "primereact/progressspinner";
+import { useAccount } from "@components/web3Hooks/useAccount";
 
 export default function Navbar() {
-  const { connect, isLoading, isWeb3Loaded, hooks } = useWeb3();
-  const { account } = hooks.hookAccount();
+  const { connect, isLoading, isWeb3Loaded } = useWeb3();
+  const { account } = useAccount();
   console.log("this is the account", account);
   return (
     <header>
