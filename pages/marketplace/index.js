@@ -5,6 +5,7 @@ import { List } from "@components/product";
 import { BaseLayout } from "@components/layout";
 import { useAccount } from "@components/hooks/web3/useAccount";
 import { useNetwork } from "@components/hooks/web3/useNetwork";
+import { Card } from "@components/shared";
 
 export default function Marketplace({ merch }) {
   const { account } = useAccount();
@@ -14,7 +15,9 @@ export default function Marketplace({ merch }) {
       <Carousel />
       <WalletInfo account={account.data} network={network.data} />
       <BannerStart />
-      <List merch={merch} />
+      <List merch={merch}>
+        {(merch) => <Card key={merch.id} merch={merch} />}
+      </List>
     </>
   );
 }
