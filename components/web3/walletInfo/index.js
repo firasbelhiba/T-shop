@@ -1,4 +1,9 @@
-export default function WalletInfo({ account, network }) {
+export default function WalletInfo({
+  account,
+  network,
+  targetNetwork,
+  isSupported,
+}) {
   return (
     <div
       className="choseus_area"
@@ -17,6 +22,15 @@ export default function WalletInfo({ account, network }) {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="single_chose chose3">
+              {!isSupported && (
+                <div className="bg-red-400 p-4 rounded-lg">
+                  <div>Connected to the wrong network</div>
+                  <div>
+                    Connect to : {``}
+                    {targetNetwork}
+                  </div>
+                </div>
+              )}
               <div className="chose_content">
                 <span>Currently on </span>
                 <strong className="text-2xl">{network}</strong>

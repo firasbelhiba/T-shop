@@ -13,7 +13,12 @@ export default function Marketplace({ merch }) {
   return (
     <>
       <Carousel />
-      <WalletInfo account={account.data} network={network.data} />
+      <WalletInfo
+        account={account.data}
+        network={network.data}
+        targetNetwork={network.target}
+        isSupported={network.isSupported}
+      />
       <BannerStart />
       <List merch={merch}>
         {(merch) => <Card key={merch.id} merch={merch} />}
