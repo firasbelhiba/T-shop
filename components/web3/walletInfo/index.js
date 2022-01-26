@@ -1,4 +1,4 @@
-export default function WalletInfo({ account }) {
+export default function WalletInfo({ account, network }) {
   return (
     <div
       className="choseus_area"
@@ -19,7 +19,7 @@ export default function WalletInfo({ account }) {
             <div className="single_chose chose3">
               <div className="chose_content">
                 <span>Currently on </span>
-                <strong className="text-2xl">Ethereum Main Network</strong>
+                <strong className="text-2xl">{network}</strong>
               </div>
             </div>
           </div>

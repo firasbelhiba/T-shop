@@ -4,13 +4,15 @@ import { getAllMerch } from "content/myMerch/fetcher";
 import { List } from "@components/product";
 import { BaseLayout } from "@components/layout";
 import { useAccount } from "@components/hooks/web3/useAccount";
+import { useNetwork } from "@components/hooks/web3/useNetwork";
 
 export default function Marketplace({ merch }) {
   const { account } = useAccount();
+  const { network } = useNetwork();
   return (
     <>
       <Carousel />
-      <WalletInfo account={account.data} />
+      <WalletInfo account={account.data} network={network.data} />
       <BannerStart />
       <List merch={merch} />
     </>
