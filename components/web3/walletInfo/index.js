@@ -3,11 +3,15 @@ export default function WalletInfo({
   network,
   targetNetwork,
   isSupported,
+  isLoading,
+  web3,
 }) {
   return (
     <div
       className="choseus_area"
-      data-bgimg="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEqvWkYDkA2S5eJ-gK6sHsOabo58a8-VtLUQ&usqp=CAU"
+      style={{
+        backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEqvWkYDkA2S5eJ-gK6sHsOabo58a8-VtLUQ&usqp=CAU")`,
+      }}
     >
       <div className="container">
         <div className="row">
@@ -22,7 +26,7 @@ export default function WalletInfo({
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="single_chose chose3">
-              {!isSupported && (
+              {!isLoading && !isSupported && (
                 <div className="bg-red-400 p-4 rounded-lg">
                   <div>Connected to the wrong network</div>
                   <div>
@@ -32,8 +36,12 @@ export default function WalletInfo({
                 </div>
               )}
               <div className="chose_content">
-                <span>Currently on </span>
-                <strong className="text-2xl">{network}</strong>
+                <span>
+                  {web3
+                    ? "Currently on  "
+                    : "You are not connected , Please intall Metamask and connect you wallet on the Ropsten network "}
+                </span>
+                <strong className="text-2xl">{web3 && network}</strong>
               </div>
             </div>
           </div>
