@@ -1,29 +1,29 @@
 export default function EthPriceDisplay({ eth }) {
 
   return (
-    <div class="bg-white border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6">
-      <div class="hidden lg:flex">
-        <div class="w-1/2 text-center py-8">
-          <div class="border-r">
-            <div class="text-grey-darker mb-2">
-              <span class="text-3xl align-top">$</span>
-              <span class="text-5xl">{eth}</span>
+    <div className="bg-white border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6">
+      <div className="hidden lg:flex">
+        <div className="w-1/2 text-center py-8">
+          <div className="border-r">
+            <div className="text-grey-darker mb-2">
+              <span className="text-3xl align-top">$</span>
+              <span className="text-5xl">{eth}</span>
             </div>
-            <div class="text-sm uppercase text-grey tracking-wide">
-              Ether Price 
+            <div className="text-sm uppercase text-grey tracking-wide">
+              Current Ether Price 
             </div>
           </div>
         </div>
-        <div class="w-1/2 text-center py-8">
+        <div className="w-1/2 text-center py-8">
           <div>
-            <div class="text-grey-darker mb-2">
-              <span class="text-3xl align-top">
-                <span class="text-green align-top">DT</span>
+            <div className="text-grey-darker mb-2">
+              <span className="text-3xl align-top">
+                <span className="text-green align-top">DT</span>
               </span>
-              <span class="text-5xl">{eth * 2.9}</span>
+              <span className="text-5xl">{eth * 2.9}</span>
             </div>
-            <div class="text-sm uppercase text-grey tracking-wide">
-              Ether in Tunisian Dinar 
+            <div className="text-sm uppercase text-grey tracking-wide">
+              Current Ether in Tunisian Dinar 
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useWeb3 } from "@components/providers";
+import { useEffect } from "react";
 
 export default function WalletInfo({
   account,
@@ -9,20 +10,24 @@ export default function WalletInfo({
   web3,
 }) {
   const { requireInstallMetamask } = useWeb3();
-  if (requireInstallMetamask) {
-    Swal.fire({
-      title: "<strong>Are you connected ?</strong>",
-      icon: "info",
-      html:
-        "<b>Metamask</b>, is not installed on your browser , please  " +
-        '<a href="https://metamask.io" target="_blank"><u>install it</u></a> ' +
-        "so you can connect your wallet and purchase merch .",
-      showCloseButton: true,
-      focusConfirm: false,
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-      confirmButtonAriaLabel: "Thumbs up, great!",
-    });
-  }
+
+  useEffect(() => {
+    if (requireInstallMetamask) {
+      Swal.fire({
+        title: "<strong>Are you connected ?</strong>",
+        icon: "info",
+        html:
+          "<b>Metamask</b>, is not installed on your browser , please  " +
+          '<a href="https://metamask.io" target="_blank"><u>install it</u></a> ' +
+          "so you can connect your wallet and purchase merch .",
+        showCloseButton: true,
+        focusConfirm: false,
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+        confirmButtonAriaLabel: "Thumbs up, great!",
+      });
+    }
+  }, []);
+  
   return (
     <div
       className="choseus_area"
