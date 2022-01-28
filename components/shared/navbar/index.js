@@ -5,7 +5,7 @@ import { ProgressSpinner } from "primereact/progressspinner";
 import { useAccount } from "@components/hooks/web3";
 
 export default function Navbar() {
-  const { connect, isLoading, isWeb3Loaded } = useWeb3();
+  const { connect, isLoading, requireInstallMetamask } = useWeb3();
   const { account } = useAccount();
   return (
     <header>
@@ -103,19 +103,13 @@ export default function Navbar() {
                       fill="var(--surface-ground)"
                     />
                   </div>
-                ) : isWeb3Loaded ? (
-                  account.data ? (
-                    <div className="header_account_list  mini_cart_wrapper">
-                      <Button className="cursor-default">
-                        Hi There {account.isAdmin && "Admin"} !{" "}
-                      </Button>
-                    </div>
-                  ) : (
-                    <div className="header_account_list  mini_cart_wrapper">
-                      <Button onClick={connect}>Connect</Button>
-                    </div>
-                  )
-                ) : (
+                ) : account.data ? (
+                  <div className="header_account_list  mini_cart_wrapper">
+                    <Button className="cursor-default">
+                      Hi There {account.isAdmin && "Admin"} !{" "}
+                    </Button>
+                  </div>
+                ) : requireInstallMetamask ? (
                   <div className="header_account_list  mini_cart_wrapper">
                     <Button
                       onClick={() => {
@@ -124,6 +118,10 @@ export default function Navbar() {
                     >
                       Intall Metamask
                     </Button>
+                  </div>
+                ) : (
+                  <div className="header_account_list  mini_cart_wrapper">
+                    <Button onClick={connect}>Connect</Button>
                   </div>
                 )}
 

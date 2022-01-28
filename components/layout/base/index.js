@@ -44,6 +44,7 @@ export default function BaseLayout({ children }) {
       {/* Primereact  */}
       <Script src="https://unpkg.com/primereact/core/core.min.js" />
       <Script src="https://unpkg.com/primereact/progressspinner/progressspinner.min.js" />
+      <Script src="//cdn.jsdelivr.net/npm/sweetalert2@11" />
     </Web3Provider>
   );
 }
