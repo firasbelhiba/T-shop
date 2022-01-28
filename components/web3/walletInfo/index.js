@@ -27,7 +27,7 @@ export default function WalletInfo({
       });
     }
   }, []);
-  
+
   return (
     <div
       className="choseus_area"

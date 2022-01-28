@@ -4,7 +4,7 @@ export default function Button({
   ...whatever
 }) {
   return (
-    <span {...whatever} className={`${className}`}>
+    <span {...whatever}  className={`${className}`}>
       {children}
     </span>
   );

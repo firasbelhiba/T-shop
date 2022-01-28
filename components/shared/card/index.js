@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Card({ merch }) {
+export default function Card({ merch, Footer }) {
   return (
     <div>
       <Link href={`/merch/${merch.slug}`}>
@@ -14,17 +14,15 @@ export default function Card({ merch }) {
               height="400"
             />
           </div>
-          <div className="product-content">
-            <div className="product-info">
-              <h2 className="product-title">Cosmonaut</h2>
-              <p className="product-price">$ 10</p>
-            </div>
-            <button className="product-action">
-              <i className="material-icons-outlined">favorite_border</i>
-            </button>
-          </div>
         </a>
       </Link>
+      <div className="product-content">
+        <div className="product-info">
+          <h2 className="product-title">Cosmonaut</h2>
+          <p className="product-price">$ 10</p>
+        </div>
+          {Footer && <Footer />}
+      </div>
     </div>
   );
 }
