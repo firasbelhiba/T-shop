@@ -3,10 +3,9 @@ import { WalletInfo } from "@components/web3";
 import { getAllMerch } from "content/myMerch/fetcher";
 import { List } from "@components/product";
 import { BaseLayout } from "@components/layout";
-import { useAccount } from "@components/hooks/web3/useAccount";
-import { useNetwork } from "@components/hooks/web3/useNetwork";
 import { Card } from "@components/shared";
 import { useWeb3 } from "@components/providers";
+import { useAccount, useNetwork } from "@components/hooks/web3";
 
 export default function Marketplace({ merch }) {
   const { web3 } = useWeb3();

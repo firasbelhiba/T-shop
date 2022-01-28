@@ -2,7 +2,7 @@ import { useWeb3 } from "@components/providers";
 import Link from "next/link";
 import { Button } from "@components/shared";
 import { ProgressSpinner } from "primereact/progressspinner";
-import { useAccount } from "@components/hooks/web3/useAccount";
+import { useAccount } from "@components/hooks/web3";
 
 export default function Navbar() {
   const { connect, isLoading, isWeb3Loaded } = useWeb3();

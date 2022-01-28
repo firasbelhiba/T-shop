@@ -14,7 +14,7 @@ const NETWORK = {
 const targetNetwork = NETWORK["1"];
 
 export const handler = (web3, provider) => () => {
-  const { data,error, mutate, ...swrResponse } = useSWR(
+  const { data, error, mutate, ...swrResponse } = useSWR(
     () => (web3 ? "web3/network" : null),
     async () => {
       const chainId = await web3.eth.getChainId();
@@ -26,13 +26,11 @@ export const handler = (web3, provider) => () => {
       provider.on("chainChanged", (chainId) => mutate(parseInt(chainId, 16)));
   }, [web3]);
   return {
-    network: {
-      data,
-      isLoading : !data && !error,
-      mutate,
-      target: targetNetwork,
-      isSupported: data === targetNetwork,
-      ...swrResponse,
-    },
+    data,
+    isLoading: !data && !error,
+    mutate,
+    target: targetNetwork,
+    isSupported: data === targetNetwork,
+    ...swrResponse,
   };
 };

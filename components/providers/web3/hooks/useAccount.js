@@ -22,14 +22,12 @@ export const handler = (web3, provider) => () => {
   }, [provider]);
 
   return {
-    account: {
-      data,
-      isAdmin:
-        data && whiteListAdminAddresses[web3.utils.keccak256(data)]
-          ? true
-          : false,
-      mutate,
-      ...swrResponse,
-    },
+    data,
+    isAdmin:
+      data && whiteListAdminAddresses[web3.utils.keccak256(data)]
+        ? true
+        : false,
+    mutate,
+    ...swrResponse,
   };
 };
