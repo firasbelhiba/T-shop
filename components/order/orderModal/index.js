@@ -81,7 +81,7 @@ export default function OrderModal() {
           ></i>
           <h5>Registration Successful!</h5>
           <p style={{ lineHeight: 1.5, textIndent: "1rem" }}>
-            Your account is registered under name <b>{formData.name}</b> ; it'll
+            Your account is registered under name <b>{formData.name}</b> ; it&apos;ll
             be valid next 30 days without activation. Please check{" "}
             <b>{formData.email}</b> for activation instructions.
           </p>
