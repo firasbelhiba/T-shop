@@ -19,6 +19,8 @@ export default function Marketplace({ merch }) {
   const { network } = useNetwork();
   const { eth } = useEthPrice();
 
+  const canPurchaseMerch = !!(account.data && network.isSupported);
+
   const [visible, setVisible] = useState(false);
 
   return (
@@ -42,7 +44,9 @@ export default function Marketplace({ merch }) {
             merch={merch}
             Footer={() => (
               <div>
-                <Button onClick={() => setVisible(true)}>Purchase</Button>
+                {canPurchaseMerch && (
+                  <Button onClick={() => setVisible(true)}>Purchase</Button>
+                )}
               </div>
             )}
           />

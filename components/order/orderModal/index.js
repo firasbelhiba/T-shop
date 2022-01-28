@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, Field } from "react-final-form";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
-import { Dropdown } from "primereact/dropdown";
-import { Calendar } from "primereact/calendar";
-import { Password } from "primereact/password";
 import { Checkbox } from "primereact/checkbox";
 import { Dialog } from "primereact/dialog";
-import { Divider } from "primereact/divider";
 import { classNames } from "primereact/utils";
 
 export default function OrderModal() {
@@ -81,8 +77,8 @@ export default function OrderModal() {
           ></i>
           <h5>Registration Successful!</h5>
           <p style={{ lineHeight: 1.5, textIndent: "1rem" }}>
-            Your account is registered under name <b>{formData.name}</b> ; it&apos;ll
-            be valid next 30 days without activation. Please check{" "}
+            Your account is registered under name <b>{formData.name}</b> ;
+            it&apos;ll be valid next 30 days without activation. Please check{" "}
             <b>{formData.email}</b> for activation instructions.
           </p>
         </div>
