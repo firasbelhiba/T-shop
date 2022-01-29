@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Breadcrumb() {
   return (
     <div className="breadcrumbs_area">
@@ -5,12 +7,14 @@ export default function Breadcrumb() {
         <div className="row">
           <div className="col-12">
             <div className="breadcrumb_content">
-              <h3>Home</h3>
+              <h3>Marketplace</h3>
               <ul>
                 <li>
-                  <a rel="noopener noreferrer" href="index.html">home</a>
+                  <Link href="/">
+                    <a rel="noopener noreferrer">home</a>
+                  </Link>
                 </li>
-                <li>shop</li>
+                <li>marketplace</li>
               </ul>
             </div>
           </div>

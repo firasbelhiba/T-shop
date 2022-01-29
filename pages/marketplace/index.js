@@ -3,7 +3,7 @@ import { EthPriceDisplay, WalletInfo } from "@components/web3";
 import { getAllMerch } from "content/myMerch/fetcher";
 import { List } from "@components/product";
 import { BaseLayout } from "@components/layout";
-import { Button, Card } from "@components/shared";
+import { Breadcrumb, Button, Card } from "@components/shared";
 import { useWeb3 } from "@components/providers";
 import { useAccount, useNetwork } from "@components/hooks/web3";
 import { useEthPrice } from "@components/hooks/useEthPrice";
@@ -37,6 +37,7 @@ export default function Marketplace({ merch }) {
       />
       <EthPriceDisplay eth={eth.data} />
       <BannerStart />
+      <Breadcrumb />
       <List merch={merch}>
         {(merch) => (
           <Card
