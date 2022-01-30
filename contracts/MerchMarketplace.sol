@@ -24,8 +24,26 @@ contract MerchMarketPlace {
 
     uint256 private totalOwnedMerch;
 
+    address payable private owner;
+
+    constructor() {
+        setContractOwner(msg.sender);
+    }
+
+    // Only access for owner
+    error OnlyOwner();
+
+    modifier onlyOwner() {
+        if (msg.sender != getContractOwner()) {
+            revert OnlyOwner();
+        }
+        _;
+    }
+
     function purchaseMerch(bytes16 merchId, bytes32 zkproof) external payable {
-        bytes32 merchHash = keccak256(abi.encodePacked(merchId, msg.sender , block.timestamp));
+        bytes32 merchHash = keccak256(
+            abi.encodePacked(merchId, msg.sender, block.timestamp)
+        );
         uint256 id = totalOwnedMerch++;
         ownedMerchHash[id] = merchHash;
         ownedMerch[merchHash] = Merch({
@@ -35,6 +53,10 @@ contract MerchMarketPlace {
             owner: msg.sender,
             state: State.Purchased
         });
+    }
+
+    function transferOwnership(address newOwner) external onlyOwner {
+        setContractOwner(newOwner);
     }
 
     function getMerchCount() external view returns (uint256) {
@@ -55,5 +77,13 @@ contract MerchMarketPlace {
         returns (Merch memory)
     {
         return ownedMerch[merchHash];
+    }
+
+    function getContractOwner() public view returns (address) {
+        return owner;
+    }
+
+    function setContractOwner(address newOwner) private {
+        owner = payable(newOwner);
     }
 }
