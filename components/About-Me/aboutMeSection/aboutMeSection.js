@@ -13,11 +13,11 @@ export default function AboutMeSection() {
               <p>
                 For this reason, our each design serves an idea. Our strength in
                 design is reflected by our name, our care for details. Our
-                specialist won't be afraid to go extra miles just to approach
-                near perfection. We don't require everything to be perfect, but
-                we need them to be perfectly cared for. That's a reason why we
+                specialist won&apos;t be afraid to go extra miles just to approach
+                near perfection. We don&apos;t require everything to be perfect, but
+                we need them to be perfectly cared for. That&apos;s a reason why we
                 are willing to give contributions at best. Not a single detail
-                is missed out under Billey's professional eyes.The amount of
+                is missed out under Billey&apos;s professional eyes.The amount of
                 dedication and effort equals to the level of passion and by.
               </p>
             </div>
