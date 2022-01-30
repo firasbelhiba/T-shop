@@ -25,7 +25,7 @@ contract MerchMarketPlace {
     uint256 private totalOwnedMerch;
 
     function purchaseMerch(bytes16 merchId, bytes32 zkproof) external payable {
-        bytes32 merchHash = keccak256(abi.encodePacked(merchId, msg.sender));
+        bytes32 merchHash = keccak256(abi.encodePacked(merchId, msg.sender , block.timestamp));
         uint256 id = totalOwnedMerch++;
         ownedMerchHash[id] = merchHash;
         ownedMerch[merchHash] = Merch({
@@ -35,5 +35,25 @@ contract MerchMarketPlace {
             owner: msg.sender,
             state: State.Purchased
         });
+    }
+
+    function getMerchCount() external view returns (uint256) {
+        return totalOwnedMerch;
+    }
+
+    function getMerchHashByIndex(uint256 index)
+        external
+        view
+        returns (bytes32)
+    {
+        return ownedMerchHash[index];
+    }
+
+    function getMerchByHash(bytes32 merchHash)
+        external
+        view
+        returns (Merch memory)
+    {
+        return ownedMerch[merchHash];
     }
 }
