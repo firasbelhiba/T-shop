@@ -10,7 +10,7 @@ export default function Card({ merch, Footer }) {
             <Image
               src={merch.coverImage}
               alt={merch.title}
-              width="400"
+              width="600"
               height="400"
             />
           </div>
@@ -18,10 +18,10 @@ export default function Card({ merch, Footer }) {
       </Link>
       <div className="product-content">
         <div className="product-info">
-          <h2 className="product-title">Cosmonaut</h2>
-          <p className="product-price">$ 10</p>
+          <h2 className="product-title">{merch.title}</h2>
+          <p className="product-price">$ {merch.price}</p>
         </div>
-          {Footer && <Footer />}
+        {Footer && <Footer />}
       </div>
     </div>
   );

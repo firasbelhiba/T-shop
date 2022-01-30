@@ -17,6 +17,7 @@
     "react-final-form": "^6.5.7",
     "react-transition-group": "^4.4.2",
     "sweetalert2": "^11.3.10",
+    "sweetalert2-react-content": "^4.2.0",
     "swr": "^1.1.2",
     "web3": "^1.7.0"
   },

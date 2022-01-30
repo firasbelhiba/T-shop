@@ -14,9 +14,11 @@ export default function Navbar() {
           <div className="row align-items-center">
             <div className="col-lg-2 col-md-4 offset-md-4 offset-lg-0 col-5 offset-3 col-sm-5">
               <div className="logo">
-                <a rel="noopener noreferrer" href="index.html">
-                  <img src="/assets/img/logo/logo.png" alt="" />
-                </a>
+                <Link href="/">
+                  <a rel="noopener noreferrer" >
+                    <img src="/assets/img/logo/logo.png" alt="" />
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-8">
@@ -48,45 +50,9 @@ export default function Navbar() {
                       </a>
                     </li>
                     <li>
-                      <a rel="noopener noreferrer" href="about.html">
-                        {" "}
-                        About us
-                      </a>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="#">
-                        pages <i className="fa fa-angle-down" />
-                      </a>
-                      <ul className="sub_menu pages">
-                        <li>
-                          <a rel="noopener noreferrer" href="about.html">
-                            About Us
-                          </a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="services.html">
-                            services
-                          </a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="faq.html">
-                            Frequently Questions
-                          </a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="contact.html">
-                            contact
-                          </a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer">login</a>
-                        </li>
-                        <li>
-                          <a rel="noopener noreferrer" href="404.html">
-                            Error 404
-                          </a>
-                        </li>
-                      </ul>
+                      <Link href="/about-me">
+                        <a rel="noopener noreferrer"> About me</a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
