@@ -15,7 +15,7 @@ export default function Navbar() {
             <div className="col-lg-2 col-md-4 offset-md-4 offset-lg-0 col-5 offset-3 col-sm-5">
               <div className="logo">
                 <Link href="/">
-                  <a rel="noopener noreferrer" >
+                  <a rel="noopener noreferrer">
                     <img src="/assets/img/logo/logo.png" alt="" />
                   </a>
                 </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
                 )}
 
                 <div className="header_account_list search_list">
-                  <a rel="noopener noreferrer" href="javascript:void(0)">
+                  <a rel="noopener noreferrer">
                     <span className="pe-7s-search" />
                   </a>
                   <div className="dropdown_search">
@@ -101,14 +101,14 @@ export default function Navbar() {
                         placeholder="Search entire store here ..."
                         type="text"
                       />
-                      <button type="submit">
+                      <button>
                         <span className="pe-7s-search" />
                       </button>
                     </form>
                   </div>
                 </div>
                 <div className="header_account_list  mini_cart_wrapper">
-                  <a rel="noopener noreferrer" href="javascript:void(0)">
+                  <a rel="noopener noreferrer">
                     <span className="pe-7s-shopbag" />
                     <span className="item_count">2</span>
                   </a>
@@ -156,7 +156,7 @@ export default function Navbar() {
               <h3>cart</h3>
             </div>
             <div className="mini_cart_close">
-              <a rel="noopener noreferrer" href="javascript:void(0)">
+              <a rel="noopener noreferrer">
                 <i className="ion-android-close" />
               </a>
             </div>

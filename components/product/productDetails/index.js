@@ -113,10 +113,8 @@ export default function ProductDetails({ title, description, image }) {
                 </div>
                 <div className="product_variant quantity">
                   <label>quantity</label>
-                  <input min={1} max={100} defaultValue={1} type="number" />
-                  <button className="button" type="submit">
-                    add to cart
-                  </button>
+                  <input min={1} max={100} defaultValue={1} />
+                  <button className="button">add to cart</button>
                 </div>
                 <div className=" product_d_action">
                   <ul>

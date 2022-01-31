@@ -13,21 +13,23 @@ import withReactContent from "sweetalert2-react-content";
 export default function Home({ merch }) {
   const { web3, isLoading } = useWeb3();
   const MySwal = withReactContent(Swal);
-  if (web3) {
-    MySwal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Your work has been saved",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  } else {
-    MySwal.fire({
-      icon: "question",
-      title: "Oops...",
-      text: "You are not connected to Metamask",
-      footer: '<a href="">Why do I have this issue?</a>',
-    });
+  if (!isLoading) {
+    if (web3) {
+      MySwal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      MySwal.fire({
+        icon: "question",
+        title: "Oops...",
+        text: "You are not connected to Metamask",
+        footer: '<a href="">Why do I have this issue?</a>',
+      });
+    }
   }
   return (
     <>

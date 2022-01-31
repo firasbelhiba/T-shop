@@ -10,15 +10,15 @@ export default function Card() {
         >
           <p>
             <label> Your Name (required)</label>
-            <input name="name" placeholder="Name *" type="text" />
+            <input name="name" placeholder="Name *" />
           </p>
           <p>
             <label> Your Email (required)</label>
-            <input name="email" placeholder="Email *" type="email" />
+            <input name="email" placeholder="Email *" />
           </p>
           <p>
             <label> Subject</label>
-            <input name="subject" placeholder="Subject *" type="text" />
+            <input name="subject" placeholder="Subject *" />
           </p>
           <div className="contact_textarea">
             <label> Your Message</label>
@@ -29,7 +29,7 @@ export default function Card() {
               defaultValue={""}
             />
           </div>
-          <button type="submit"> Send</button>
+          <button> Send</button>
           <p className="form-messege" />
         </form>
       </div>

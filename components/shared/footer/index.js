@@ -16,7 +16,6 @@ export default function Footer() {
                   <form id="mc-form" className="mc-form footer-newsletter">
                     <input
                       id="mc-email"
-                      type="email"
                       autoComplete="off"
                       placeholder="Your email address"
                     />

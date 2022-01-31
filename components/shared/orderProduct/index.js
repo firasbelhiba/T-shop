@@ -32,10 +32,7 @@ export default function OrderProduct() {
                     </p>
                   </div>
                   <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-                    <button
-                      type="button"
-                      className="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
-                    >
+                    <button className="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
                       <span className="sr-only">Dismiss</span>
                       <svg
                         className="h-6 w-6 text-white"
@@ -71,7 +68,6 @@ export default function OrderProduct() {
             <div className="mt-2">
               <div className="mt-1 relative rounded-md w-72">
                 <input
-                  type="text"
                   name="price"
                   id="price"
                   className="focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"

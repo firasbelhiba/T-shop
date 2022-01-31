@@ -6,6 +6,7 @@ const {
   useMemo,
 } = require("react");
 import detectEthereumProvider from "@metamask/detect-provider";
+import { loadContract } from "utils/loadContract";
 import Web3 from "web3";
 import { setupHooks } from "./hooks/setupHooks";
 
@@ -25,6 +26,8 @@ export default function Web3Provider({ children }) {
       const provider = await detectEthereumProvider();
       if (provider) {
         const web3 = new Web3(provider);
+        const contract = await loadContract("MerchMarketPlace", provider);
+        console.log("This is the contract ", contract);
         setWeb3Api({
           provider,
           web3,
@@ -42,7 +45,7 @@ export default function Web3Provider({ children }) {
   }, []);
 
   const _web3Api = useMemo(() => {
-    const { web3, provider , isLoading } = web3Api;
+    const { web3, provider, isLoading } = web3Api;
     return {
       ...web3Api,
       requireInstallMetamask: !isLoading && !web3,
@@ -73,5 +76,5 @@ export function useWeb3() {
 
 export function useHooks(callback) {
   const { hooks } = useWeb3();
-    return callback(hooks);
+  return callback(hooks);
 }
