@@ -5,10 +5,12 @@ import { Button } from "primereact/button";
 import { Checkbox } from "primereact/checkbox";
 import { Dialog } from "primereact/dialog";
 import { classNames } from "primereact/utils";
+import { useEthPrice } from "@components/hooks/useEthPrice";
 
-export default function OrderModal({ selectedMerch }) {
+export default function OrderModal({ selectedMerch, onPurchaseMerch }) {
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
+  const { eth } = useEthPrice();
 
   const validate = (data) => {
     let errors = {};
@@ -39,7 +41,7 @@ export default function OrderModal({ selectedMerch }) {
   const onSubmit = (data, form) => {
     setFormData(data);
     setShowMessage(true);
-    console.log(formData);
+    onPurchaseMerch(data.email, (1 / eth.data) * selectedMerch.price);
     form.restart();
   };
 

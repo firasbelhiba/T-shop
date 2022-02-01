@@ -14,7 +14,7 @@ import { Dialog } from "primereact/dialog";
 import { OrderModal } from "@components/order";
 
 export default function Marketplace({ merchs }) {
-  const { web3 } = useWeb3();
+  const { web3, contract } = useWeb3();
   const { account } = useAccount();
   const { network } = useNetwork();
   const { eth } = useEthPrice();
@@ -24,7 +24,7 @@ export default function Marketplace({ merchs }) {
   const [visible, setVisible] = useState(false);
   const [selectedMerch, setSelectedMerch] = useState(null);
 
-  const purchaseMerch = (order) => {
+  const purchaseMerch = async (email, priceInEther) => {
     const hexMerchId = web3.utils.utf8ToHex(selectedMerch.id);
     const orderHash = web3.utils.soliditySha3(
       {
@@ -33,7 +33,10 @@ export default function Marketplace({ merchs }) {
       },
       { type: "address", value: account.data }
     );
-    const emailHash = web3.utils.sha3(order.email);
+
+    const emailHash = web3.utils.sha3(email);
+
+    // Proof = email hash + order hash
     const zkproof = web3.utils.soliditySha3(
       {
         type: "bytes32",
@@ -44,8 +47,18 @@ export default function Marketplace({ merchs }) {
         value: orderHash,
       }
     );
+    console.log(contract.methods);
+    const value = web3.utils.toWei(String(priceInEther), "ether");
 
-    // Proof = email hash + order hash
+    try {
+      const result = await contract.methods
+        .purchaseMerch(hexMerchId, zkproof)
+        .send({ from: account.data, value });
+      console.log(result);
+    } catch (error) {
+      console.error("Purchase course: Operation has failed.");
+      console.log(error);
+    }
   };
 
   return (
@@ -93,7 +106,10 @@ export default function Marketplace({ merchs }) {
         style={{ width: "50vw" }}
         onHide={() => setVisible(false)}
       >
-        <OrderModal selectedMerch={selectedMerch} />
+        <OrderModal
+          onPurchaseMerch={purchaseMerch}
+          selectedMerch={selectedMerch}
+        />
       </Dialog>
     </>
   );
