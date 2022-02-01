@@ -5,7 +5,7 @@ import { List } from "@components/product";
 import { BaseLayout } from "@components/layout";
 import { Breadcrumb, Button, Card } from "@components/shared";
 import { useWeb3 } from "@components/providers";
-import { useAccount, useNetwork } from "@components/hooks/web3";
+import { useAccount, useNetwork, useOwnedMerch } from "@components/hooks/web3";
 import { useEthPrice } from "@components/hooks/useEthPrice";
 import { useState } from "react";
 
@@ -18,6 +18,7 @@ export default function Marketplace({ merchs }) {
   const { account } = useAccount();
   const { network } = useNetwork();
   const { eth } = useEthPrice();
+  const { ownedMerch } = useOwnedMerch();
 
   const canPurchaseMerch = !!(account.data && network.isSupported);
 
@@ -64,7 +65,6 @@ export default function Marketplace({ merchs }) {
   return (
     <>
       <Carousel />
-
       <WalletInfo
         web3={web3}
         account={account.data}
@@ -73,6 +73,7 @@ export default function Marketplace({ merchs }) {
         isSupported={network.isSupported}
         isLoading={network.isLoading}
       />
+      {ownedMerch.data}
       <EthPriceDisplay eth={eth.data} />
       <BannerStart />
       <Breadcrumb />

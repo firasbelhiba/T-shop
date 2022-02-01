@@ -42,9 +42,8 @@ contract MerchMarketPlace {
 
     function purchaseMerch(bytes16 merchId, bytes32 zkproof) external payable {
         bytes32 merchHash = keccak256(
-            abi.encodePacked(merchId, msg.sender)
+            abi.encodePacked(merchId, msg.sender, block.timestamp)
         );
-        // , block.timestamp
         uint256 id = totalOwnedMerch++;
         ownedMerchHash[id] = merchHash;
         ownedMerch[merchHash] = Merch({

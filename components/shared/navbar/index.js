@@ -39,6 +39,11 @@ export default function Navbar() {
                       </Link>
                     </li>
                     <li>
+                      <Link href="/owned-merch">
+                        <a rel="noopener noreferrer"> My purchase</a>
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="/blogs">
                         <a rel="noopener noreferrer">Blogs</a>
                       </Link>
