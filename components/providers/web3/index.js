@@ -31,7 +31,7 @@ export default function Web3Provider({ children }) {
         setWeb3Api({
           provider,
           web3,
-          contract: null,
+          contract: contract,
           isLoading: false,
           hooks: setupHooks(web3, provider),
         });

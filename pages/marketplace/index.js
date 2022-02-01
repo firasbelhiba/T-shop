@@ -13,7 +13,7 @@ import { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { OrderModal } from "@components/order";
 
-export default function Marketplace({ merch }) {
+export default function Marketplace({ merchs }) {
   const { web3 } = useWeb3();
   const { account } = useAccount();
   const { network } = useNetwork();
@@ -22,6 +22,31 @@ export default function Marketplace({ merch }) {
   const canPurchaseMerch = !!(account.data && network.isSupported);
 
   const [visible, setVisible] = useState(false);
+  const [selectedMerch, setSelectedMerch] = useState(null);
+
+  const purchaseMerch = (order) => {
+    const hexMerchId = web3.utils.utf8ToHex(selectedMerch.id);
+    const orderHash = web3.utils.soliditySha3(
+      {
+        type: "bytes16",
+        value: hexMerchId,
+      },
+      { type: "address", value: account.data }
+    );
+    const emailHash = web3.utils.sha3(order.email);
+    const zkproof = web3.utils.soliditySha3(
+      {
+        type: "bytes32",
+        value: emailHash,
+      },
+      {
+        type: "bytes32",
+        value: orderHash,
+      }
+    );
+
+    // Proof = email hash + order hash
+  };
 
   return (
     <>
@@ -38,15 +63,23 @@ export default function Marketplace({ merch }) {
       <EthPriceDisplay eth={eth.data} />
       <BannerStart />
       <Breadcrumb />
-      <List merch={merch}>
+      <List merchs={merchs}>
         {(merch) => (
           <Card
             key={merch.id}
             merch={merch}
+            onClick={() => setSelectedMerch(merch)}
             Footer={() => (
               <div>
                 {canPurchaseMerch && (
-                  <Button onClick={() => setVisible(true)}>Purchase</Button>
+                  <Button
+                    onClick={() => {
+                      setVisible(true);
+                      setSelectedMerch(merch);
+                    }}
+                  >
+                    Purchase
+                  </Button>
                 )}
               </div>
             )}
@@ -60,7 +93,7 @@ export default function Marketplace({ merch }) {
         style={{ width: "50vw" }}
         onHide={() => setVisible(false)}
       >
-        <OrderModal />
+        <OrderModal selectedMerch={selectedMerch} />
       </Dialog>
     </>
   );
@@ -70,7 +103,7 @@ export function getStaticProps() {
   const { data, myMerchMap } = getAllMerch();
   return {
     props: {
-      merch: data,
+      merchs: data,
     },
   };
 }

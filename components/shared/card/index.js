@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Card({ merch, Footer }) {
+export default function Card({ merch, Footer, ...whatever }) {
   return (
     <div>
-      <Link href={`/merch/${merch.slug}`}>
+      <Link {...whatever} href={`/merch/${merch.slug}`}>
         <a rel="noopener noreferrer" className="product">
           <div className="product-image">
             <Image

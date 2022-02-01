@@ -6,16 +6,12 @@ import { Checkbox } from "primereact/checkbox";
 import { Dialog } from "primereact/dialog";
 import { classNames } from "primereact/utils";
 
-export default function OrderModal() {
+export default function OrderModal({ selectedMerch }) {
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
 
   const validate = (data) => {
     let errors = {};
-
-    if (!data.name) {
-      errors.name = "Name is required.";
-    }
 
     if (!data.email) {
       errors.email = "Email is required.";
@@ -23,8 +19,14 @@ export default function OrderModal() {
       errors.email = "Invalid email address. E.g. example@email.com";
     }
 
-    if (!data.password) {
-      errors.password = "Password is required.";
+    if (data.confirmationEmail != data.email) {
+      errors.confirmationEmail =
+        "Confirmation email must match email is required.";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data.confirmationEmail)
+    ) {
+      errors.confirmationEmail =
+        "Invalid email address. E.g. example@email.com";
     }
 
     if (!data.accept) {
@@ -37,7 +39,7 @@ export default function OrderModal() {
   const onSubmit = (data, form) => {
     setFormData(data);
     setShowMessage(true);
-
+    console.log(formData);
     form.restart();
   };
 
@@ -89,42 +91,13 @@ export default function OrderModal() {
           <Form
             onSubmit={onSubmit}
             initialValues={{
-              name: "",
               email: "",
-              password: "",
-              date: null,
-              country: null,
+              confirmationEmail: "",
               accept: false,
             }}
             validate={validate}
             render={({ handleSubmit }) => (
               <form onSubmit={handleSubmit} className="p-fluid">
-                <Field
-                  name="name"
-                  render={({ input, meta }) => (
-                    <div className="field">
-                      <span className="p-float-label">
-                        <InputText
-                          id="name"
-                          {...input}
-                          autoFocus
-                          className={classNames({
-                            "p-invalid": isFormFieldValid(meta),
-                          })}
-                        />
-                        <label
-                          htmlFor="name"
-                          className={classNames({
-                            "p-error": isFormFieldValid(meta),
-                          })}
-                        >
-                          Name*
-                        </label>
-                      </span>
-                      {getFormErrorMessage(meta)}
-                    </div>
-                  )}
-                />
                 <Field
                   name="email"
                   render={({ input, meta }) => (
@@ -145,6 +118,33 @@ export default function OrderModal() {
                           })}
                         >
                           Email*
+                        </label>
+                      </span>
+                      {getFormErrorMessage(meta)}
+                    </div>
+                  )}
+                />
+
+                <Field
+                  name="confirmationEmail"
+                  render={({ input, meta }) => (
+                    <div className="field mb-4">
+                      <span className="p-float-label p-input-icon-right">
+                        <i className="pi pi-envelope" />
+                        <InputText
+                          id="confirmationEmail"
+                          {...input}
+                          className={classNames({
+                            "p-invalid": isFormFieldValid(meta),
+                          })}
+                        />
+                        <label
+                          htmlFor="confirmationEmail"
+                          className={classNames({
+                            "p-error": isFormFieldValid(meta),
+                          })}
+                        >
+                          Confirmation Email*
                         </label>
                       </span>
                       {getFormErrorMessage(meta)}
