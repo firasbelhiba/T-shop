@@ -11,6 +11,8 @@ export default function Product({ merch }) {
         title={merch.title}
         description={merch.description}
         image={merch.coverImage}
+        price={merch.price}
+        type={merch.type}
       />
     </>
   );

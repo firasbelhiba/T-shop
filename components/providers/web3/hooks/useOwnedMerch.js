@@ -2,7 +2,7 @@ import useSWR from "swr";
 
 export const handler = (web3, contract) => (merchs, account) => {
   const swrRes = useSWR(
-    () => (web3 && contract && account ? "web3/ownedMerchs" : null),
+    () => (web3 && contract && account ? `web3/ownedMerchs/${account}` : null),
     async () => {
       const ownedMerchs = [];
 
@@ -34,7 +34,7 @@ export const handler = (web3, contract) => (merchs, account) => {
         }
       }
 
-      debugger
+      debugger;
       return ownedMerchs;
     }
   );

@@ -16,7 +16,7 @@ export default function Navbar() {
               <div className="logo">
                 <Link href="/">
                   <a rel="noopener noreferrer">
-                    <img src="/assets/img/logo/logo.png" alt="" />
+                    <img src="/assets/img/logo/logo3.jpg" alt="" />
                   </a>
                 </Link>
               </div>
@@ -95,144 +95,11 @@ export default function Navbar() {
                     <Button onClick={connect}>Connect</Button>
                   </div>
                 )}
-
-                <div className="header_account_list search_list">
-                  <a rel="noopener noreferrer">
-                    <span className="pe-7s-search" />
-                  </a>
-                  <div className="dropdown_search">
-                    <form action="#">
-                      <input
-                        placeholder="Search entire store here ..."
-                        type="text"
-                      />
-                      <button>
-                        <span className="pe-7s-search" />
-                      </button>
-                    </form>
-                  </div>
-                </div>
-                <div className="header_account_list  mini_cart_wrapper">
-                  <a rel="noopener noreferrer">
-                    <span className="pe-7s-shopbag" />
-                    <span className="item_count">2</span>
-                  </a>
-                </div>
-
-                <div className="language_currency header_account_list ">
-                  <a rel="noopener noreferrer" href="#">
-                    {" "}
-                    <span className="pe-7s-user" />
-                  </a>
-                  <ul className="dropdown_currency">
-                    <li>
-                      <a rel="noopener noreferrer" onClick={connect}>
-                        Connect
-                      </a>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="#">
-                        Order History
-                      </a>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="wishlist.html">
-                        Wishlist
-                      </a>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="cart.html">
-                        Shipping
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/*mini cart*/}
-      <div className="mini_cart">
-        <div className="cart_gallery">
-          <div className="cart_close">
-            <div className="cart_text">
-              <h3>cart</h3>
-            </div>
-            <div className="mini_cart_close">
-              <a rel="noopener noreferrer">
-                <i className="ion-android-close" />
-              </a>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_img">
-              <a rel="noopener noreferrer" href="#">
-                <img src="/assets/img/s-product/product.jpg" alt="" />
-              </a>
-            </div>
-            <div className="cart_info">
-              <a rel="noopener noreferrer" href="#">
-                Juicy Couture Tricot
-              </a>
-              <p>
-                1 x <span> $30.00 </span>
-              </p>
-            </div>
-            <div className="cart_remove">
-              <a rel="noopener noreferrer" href="#">
-                <i className="ion-ios-close-outline" />
-              </a>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_img">
-              <a rel="noopener noreferrer" href="#">
-                <img src="/assets/img/s-product/product2.jpg" alt="" />
-              </a>
-            </div>
-            <div className="cart_info">
-              <a rel="noopener noreferrer" href="#">
-                Juicy Couture Juicy
-              </a>
-              <p>
-                1 x <span> $29.00 </span>
-              </p>
-            </div>
-            <div className="cart_remove">
-              <a rel="noopener noreferrer" href="#">
-                <i className="ion-ios-close-outline" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="mini_cart_table">
-          <div className="cart_table_border">
-            <div className="cart_total">
-              <span>Sub total:</span>
-              <span className="price">$125.00</span>
-            </div>
-            <div className="cart_total mt-10">
-              <span>total:</span>
-              <span className="price">$125.00</span>
-            </div>
-          </div>
-        </div>
-        <div className="mini_cart_footer">
-          <div className="cart_button">
-            <a rel="noopener noreferrer" href="cart.html">
-              <i className="fa fa-shopping-cart" /> View cart
-            </a>
-          </div>
-          <div className="cart_button">
-            <a href="checkout.html">
-              <i className="fa fa-sign-in" /> Checkout
-            </a>
-          </div>
-        </div>
-      </div>
-      {/*mini cart end*/}
     </header>
   );
 }
