@@ -14,10 +14,12 @@ export const useAccount = () => {
   };
 };
 
-export const useOwnedMerch = () => {
-  const res = useHooks((hooks) => hooks.useOwnedMerch)();
+export const useOwnedMerch = (...args) => {
+  const swrResponse = enhanceHook(
+    useHooks((hooks) => hooks.useOwnedMerch)(...args)
+  );
 
-  return { ownedMerch: { data: res } };
+  return { ownedMerch: swrResponse };
 };
 
 export const useNetwork = () => {

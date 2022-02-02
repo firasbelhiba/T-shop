@@ -18,7 +18,7 @@ export default function Home({ merch }) {
       MySwal.fire({
         position: "top-end",
         icon: "success",
-        title: "Your work has been saved",
+        title: "You are connected successfully to Metamask",
         showConfirmButton: false,
         timer: 1500,
       });
