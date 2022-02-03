@@ -15,7 +15,9 @@ module.exports = {
           mnemonic: {
             phrase: keys.MNEMONIC,
           },
-          providerOrUrl: `https://ropsten.infura.io/v3/${keys.INFURA_PROJECT_ID}`,
+          // providerOrUrl: `https://ropsten.infura.io/v3/${keys.INFURA_PROJECT_ID}`,
+          providerOrUrl:
+            "https://ropsten.infura.io/v3/c41b490b41d94038be111f8ba4221a08",
           addressIndex: 0,
         }),
       network_id: 3,
