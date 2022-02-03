@@ -16,6 +16,8 @@ contract MerchMarketPlace {
         State state; // 1
     }
 
+    bool public isStopped = false;
+
     // Mapping of merchHash to merchData
     mapping(bytes32 => Merch) private ownedMerch;
 
@@ -40,10 +42,50 @@ contract MerchMarketPlace {
         _;
     }
 
-    function purchaseMerch(bytes16 merchId, bytes32 zkproof) external payable {
-        bytes32 merchHash = keccak256(
-            abi.encodePacked(merchId, msg.sender)
-        );
+    modifier onlyWhenNotStopped() {
+        require(!isStopped);
+        _;
+    }
+
+    modifier onlyWhenIsStopped() {
+        require(isStopped);
+        _;
+    }
+
+    function stopContract() external onlyOwner {
+        isStopped = true;
+    }
+
+    function resumeContract() external onlyOwner {
+        isStopped = false;
+    }
+
+    receive() external payable {}
+
+    function withdrawEther(uint256 amount) external onlyOwner {
+        (bool success, ) = owner.call{value: amount}("");
+        require(success, "Transfer of Ether to owner has failed.");
+    }
+
+    function superEmergencyWithdrawEther()
+        external
+        onlyWhenIsStopped
+        onlyOwner
+    {
+        (bool success, ) = owner.call{value: address(this).balance}("");
+        require(success, "Transfer of Ether to owner has failed.");
+    }
+
+    function selfDestruct() external onlyWhenIsStopped onlyOwner {
+        selfdestruct(owner);
+    }
+
+    function purchaseMerch(bytes16 merchId, bytes32 zkproof)
+        external
+        payable
+        onlyWhenNotStopped
+    {
+        bytes32 merchHash = keccak256(abi.encodePacked(merchId, msg.sender));
         uint256 id = totalOwnedMerch++;
         ownedMerchHash[id] = merchHash;
         ownedMerch[merchHash] = Merch({
