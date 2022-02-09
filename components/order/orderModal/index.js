@@ -169,8 +169,8 @@ export default function OrderModal({
                         <br />
                         This transaction will be on the Ropsten test network .
                         It means that every Ether you will spend on this
-                        transaction is fake Ether . So you won't loose any money
-                        of your pocket . It's only for demo purposes . If you
+                        transaction is fake Ether . So you won&apos;t loose any money
+                        of your pocket . It&apos;s only for demo purposes . If you
                         want some more information on the Ropsten test network ,
                         click on this{" "}
                         <a
@@ -182,7 +182,7 @@ export default function OrderModal({
                         <br />
                         <br />
                         Also we will use your email only for hashing purposes .
-                        That means it won't be saved in a centralized database.
+                        That means it won&apos;t be saved in a centralized database.
                         We need it for the creation of the zero knowledge proof
                         that you own this merch after your finish paying the
                         transaction . If you want to know more about the zero
@@ -197,7 +197,7 @@ export default function OrderModal({
                         <br />
                         Every purchase will not be delivered , you will only get
                         the picture of the product that will be added to your
-                        collection with a proof . Don't forget that this website
+                        collection with a proof . Don&apos;t forget that this website
                         is for demo prupose .
                         <br />
                         <br />
