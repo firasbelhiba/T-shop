@@ -17,12 +17,17 @@ export default function AboutMeSection() {
                 reality . Check my{" "}
                 <a
                   href="https://www.linkedin.com/in/firas-belhiba-4b7b66202/"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <u>Linkedin profile</u>
                 </a>{" "}
                 or my{" "}
-                <a href="https://firasbelhiba.github.io/" target="_blank">
+                <a
+                  href="https://firasbelhiba.github.io/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <u> website</u>
                 </a>{" "}
                 .
