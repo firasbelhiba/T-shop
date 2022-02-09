@@ -2,11 +2,14 @@ import { useWeb3 } from "@components/providers";
 import Link from "next/link";
 import { Button } from "@components/shared";
 import { ProgressSpinner } from "primereact/progressspinner";
+import { useRouter } from "next/router";
 import { useAccount } from "@components/hooks/web3";
 
 export default function Navbar() {
   const { connect, isLoading, requireInstallMetamask } = useWeb3();
   const { account } = useAccount();
+  const router = useRouter();
+
   return (
     <header>
       <div className="main_header sticky-header">
@@ -28,7 +31,7 @@ export default function Navbar() {
                   <ul>
                     <li>
                       <Link href="/">
-                        <a rel="noopener noreferrer" className="active">
+                        <a rel="noopener noreferrer">
                           Home
                         </a>
                       </Link>
@@ -42,17 +45,6 @@ export default function Navbar() {
                       <Link href="/owned-merch">
                         <a rel="noopener noreferrer"> My purchase</a>
                       </Link>
-                    </li>
-                    <li>
-                      <Link href="/blogs">
-                        <a rel="noopener noreferrer">Blogs</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <a rel="noopener noreferrer" href="contact.html">
-                        {" "}
-                        Contact Us
-                      </a>
                     </li>
                     <li>
                       <Link href="/about-me">

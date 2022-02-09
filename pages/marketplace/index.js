@@ -21,6 +21,7 @@ export default function Marketplace({ merchs }) {
 
   const canPurchaseMerch = !!(account.data && network.isSupported);
 
+  const [Message, setMessage] = useState("You want to buy this merch ? ");
   const [visible, setVisible] = useState(false);
   const [selectedMerch, setSelectedMerch] = useState(null);
 
@@ -100,7 +101,7 @@ export default function Marketplace({ merchs }) {
       </List>
 
       <Dialog
-        header="You want to buy this merch ? "
+        header={Message}
         visible={visible}
         style={{ width: "50vw" }}
         onHide={() => setVisible(false)}
@@ -108,6 +109,7 @@ export default function Marketplace({ merchs }) {
         <OrderModal
           onPurchaseMerch={purchaseMerch}
           selectedMerch={selectedMerch}
+          setMessage={setMessage}
         />
       </Dialog>
     </>

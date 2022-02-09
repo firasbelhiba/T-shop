@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ServicesSection() {
   return (
     <div className="about_gallery_section">
@@ -8,15 +10,18 @@ export default function ServicesSection() {
               <article className="single_gallery_section">
                 <figure>
                   <div className="gallery_thumb">
-                    <img src="assets/img/about/about2.jpg" alt="" />
+                    <Image
+                      src="https://www.pngitem.com/pimgs/m/531-5311750_web-application-development-automation-process-hd-png-download.png"
+                      width="600"
+                      height="400"
+                    />
                   </div>
                   <figcaption className="about_gallery_content">
-                    <h3>What do we do?</h3>
+                    <h3>Full Stack (Web application) </h3>
                     <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium, totam rem
-                      aperiam, eaque ipsa quae ab illo inventore veritatis et
-                      quasi architecto
+                      I build Restful applications with much flexibility and
+                      variety of frameworks . I&apos;ve done multiple complexe
+                      projects and I am open to any freelance job .
                     </p>
                   </figcaption>
                 </figure>
@@ -26,15 +31,20 @@ export default function ServicesSection() {
               <article className="single_gallery_section">
                 <figure>
                   <div className="gallery_thumb">
-                    <img src="assets/img/about/about3.jpg" alt="" />
+                    <Image
+                      src="https://media.istockphoto.com/photos/blockchain-technology-on-blue-background-picture-id1153383523?k=20&m=1153383523&s=612x612&w=0&h=fhoRtSUMDQl0xG4fxmhM18eIIOyCFNVWCv1AOsTCDkk="
+                      width="600"
+                      height="400"
+                    />
                   </div>
                   <figcaption className="about_gallery_content">
-                    <h3>Our Mission</h3>
+                    <h3>Blockchain ( Decentralized applications )</h3>
                     <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium, totam rem
-                      aperiam, eaque ipsa quae ab illo inventore veritatis et
-                      quasi architecto
+                      I also build DApps . I&apos;m very passionate about web3 ,
+                      whis is the new layer of the web and I&apos;m currently
+                      working on multiple decentralized applications
+                      simultaneously . I&apos;m open to any blockchain freelance
+                      as well .
                     </p>
                   </figcaption>
                 </figure>
@@ -44,15 +54,18 @@ export default function ServicesSection() {
               <article className="single_gallery_section col__3">
                 <figure>
                   <div className="gallery_thumb">
-                    <img src="assets/img/about/about4.jpg" alt="" />
+                    <Image
+                      src="https://cdn.dribbble.com/users/92164/screenshots/10680054/media/473889486ee8bb15b218204202344af3.png?compress=1&resize=400x300"
+                      width="600"
+                      height="400"
+                    />
                   </div>
                   <figcaption className="about_gallery_content">
-                    <h3>History Of Us</h3>
+                    <h3>UX/UI Designs</h3>
                     <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium, totam rem
-                      aperiam, eaque ipsa quae ab illo inventore veritatis et
-                      quasi architecto
+                      I&apos;m not UX/UI designer but I enjoy building templates
+                      and designs for web applications . I also do video montage
+                      .
                     </p>
                   </figcaption>
                 </figure>

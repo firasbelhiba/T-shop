@@ -5,20 +5,29 @@ export default function AboutMeSection() {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="about_content">
-              <h1>About Our Braga Store</h1>
-              <h3>
-                We believe that every project existing in digital world is a
-                result of an idea and every idea has a cause.
-              </h3>
+              <h1>About Firas Belhiba</h1>
+              <h3>Software Engineer , Full Stack and Blockchain developer.</h3>
               <p>
-                For this reason, our each design serves an idea. Our strength in
-                design is reflected by our name, our care for details. Our
-                specialist won&apos;t be afraid to go extra miles just to approach
-                near perfection. We don&apos;t require everything to be perfect, but
-                we need them to be perfectly cared for. That&apos;s a reason why we
-                are willing to give contributions at best. Not a single detail
-                is missed out under Billey&apos;s professional eyes.The amount of
-                dedication and effort equals to the level of passion and by.
+                I am Firas Belhiba and I am a software engineer . Specialising
+                in Full-stack and blockchain development . I&apos;ve amassed
+                over 4 years experience in project management and web
+                development and recently web3 and decentralized development.
+                I&apos;m very passionate about coding , Teamship , project
+                management , and translating project visions and objectives into
+                reality . Check my{" "}
+                <a
+                  href="https://www.linkedin.com/in/firas-belhiba-4b7b66202/"
+                  target="_blank"
+                >
+                  <u>Linkedin profile</u>
+                </a>{" "}
+                or my{" "}
+                <a href="https://firasbelhiba.github.io/" target="_blank">
+                  <u> website</u>
+                </a>{" "}
+                .
+                <br />
+                Thank you.
               </p>
             </div>
           </div>

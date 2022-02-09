@@ -10,7 +10,7 @@ export default function AboutMe() {
       <Breadcrumb />
       <AboutMeSection />
       <ServicesSection />
-      <Testimonials />
+      {/* <Testimonials /> */}
     </>
   );
 }

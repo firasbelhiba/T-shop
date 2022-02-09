@@ -6,11 +6,17 @@ import { Checkbox } from "primereact/checkbox";
 import { Dialog } from "primereact/dialog";
 import { classNames } from "primereact/utils";
 import { useEthPrice } from "@components/hooks/useEthPrice";
+import { Accordion, AccordionTab } from "primereact/accordion";
 
-export default function OrderModal({ selectedMerch, onPurchaseMerch }) {
+export default function OrderModal({
+  selectedMerch,
+  onPurchaseMerch,
+  setMessage,
+}) {
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
   const { eth } = useEthPrice();
+  const [visible, setVisible] = useState(true);
 
   const validate = (data) => {
     let errors = {};
@@ -43,6 +49,8 @@ export default function OrderModal({ selectedMerch, onPurchaseMerch }) {
     setShowMessage(true);
     onPurchaseMerch(data.email, (1 / eth.data) * selectedMerch.price);
     form.restart();
+    setVisible(false);
+    setMessage("Thank you for validating the purchase");
   };
 
   const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
@@ -89,105 +97,152 @@ export default function OrderModal({ selectedMerch, onPurchaseMerch }) {
       </Dialog>
 
       <div>
-        <div className="card">
-          <Form
-            onSubmit={onSubmit}
-            initialValues={{
-              email: "",
-              confirmationEmail: "",
-              accept: false,
-            }}
-            validate={validate}
-            render={({ handleSubmit }) => (
-              <form onSubmit={handleSubmit} className="p-fluid">
-                <Field
-                  name="email"
-                  render={({ input, meta }) => (
-                    <div className="field">
-                      <span className="p-float-label p-input-icon-right">
-                        <i className="pi pi-envelope" />
-                        <InputText
-                          id="email"
+        {visible && (
+          <div className="card">
+            <Form
+              onSubmit={onSubmit}
+              initialValues={{
+                email: "",
+                confirmationEmail: "",
+                accept: false,
+              }}
+              validate={validate}
+              render={({ handleSubmit }) => (
+                <form onSubmit={handleSubmit} className="p-fluid">
+                  <Field
+                    name="email"
+                    render={({ input, meta }) => (
+                      <div className="field">
+                        <span className="p-float-label p-input-icon-right">
+                          <i className="pi pi-envelope" />
+                          <InputText
+                            id="email"
+                            {...input}
+                            className={classNames({
+                              "p-invalid": isFormFieldValid(meta),
+                            })}
+                          />
+                          <label
+                            htmlFor="email"
+                            className={classNames({
+                              "p-error": isFormFieldValid(meta),
+                            })}
+                          >
+                            Email*
+                          </label>
+                        </span>
+                        {getFormErrorMessage(meta)}
+                      </div>
+                    )}
+                  />
+
+                  <Field
+                    name="confirmationEmail"
+                    render={({ input, meta }) => (
+                      <div className="field mb-4">
+                        <span className="p-float-label p-input-icon-right">
+                          <i className="pi pi-envelope" />
+                          <InputText
+                            id="confirmationEmail"
+                            {...input}
+                            className={classNames({
+                              "p-invalid": isFormFieldValid(meta),
+                            })}
+                          />
+                          <label
+                            htmlFor="confirmationEmail"
+                            className={classNames({
+                              "p-error": isFormFieldValid(meta),
+                            })}
+                          >
+                            Confirmation Email*
+                          </label>
+                        </span>
+                        {getFormErrorMessage(meta)}
+                      </div>
+                    )}
+                  />
+                  <div className="mb-3">
+                    <Accordion>
+                      <AccordionTab header="Agreement">
+                        Dear sir or madam <br />
+                        <br />
+                        This transaction will be on the Ropsten test network .
+                        It means that every Ether you will spend on this
+                        transaction is fake Ether . So you won't loose any money
+                        of your pocket . It's only for demo purposes . If you
+                        want some more information on the Ropsten test network ,
+                        click on this{" "}
+                        <a
+                          href="https://ethereum.org/en/developers/docs/networks/"
+                          target="_blank"
+                        >
+                          <u>link .</u>
+                        </a>
+                        <br />
+                        <br />
+                        Also we will use your email only for hashing purposes .
+                        That means it won't be saved in a centralized database.
+                        We need it for the creation of the zero knowledge proof
+                        that you own this merch after your finish paying the
+                        transaction . If you want to know more about the zero
+                        knowledge proof , click on this{" "}
+                        <a
+                          href="https://www.youtube.com/watch?v=fOGdb1CTu5c"
+                          target="_blank"
+                        >
+                          <u>link .</u>
+                        </a>
+                        <br />
+                        <br />
+                        Every purchase will not be delivered , you will only get
+                        the picture of the product that will be added to your
+                        collection with a proof . Don't forget that this website
+                        is for demo prupose .
+                        <br />
+                        <br />
+                        Thank you for your time !
+                        <br />
+                        Firas Belhiba
+                      </AccordionTab>
+                    </Accordion>
+                  </div>
+
+                  <Field
+                    name="accept"
+                    type="checkbox"
+                    render={({ input, meta }) => (
+                      <div className="field-checkbox mb-4">
+                        <Checkbox
+                          inputId="accept"
                           {...input}
                           className={classNames({
                             "p-invalid": isFormFieldValid(meta),
                           })}
                         />
                         <label
-                          htmlFor="email"
+                          htmlFor="accept"
                           className={classNames({
                             "p-error": isFormFieldValid(meta),
                           })}
                         >
-                          Email*
+                          &nbsp; I agree to the terms and conditions*
                         </label>
-                      </span>
-                      {getFormErrorMessage(meta)}
-                    </div>
-                  )}
-                />
+                      </div>
+                    )}
+                  />
 
-                <Field
-                  name="confirmationEmail"
-                  render={({ input, meta }) => (
-                    <div className="field mb-4">
-                      <span className="p-float-label p-input-icon-right">
-                        <i className="pi pi-envelope" />
-                        <InputText
-                          id="confirmationEmail"
-                          {...input}
-                          className={classNames({
-                            "p-invalid": isFormFieldValid(meta),
-                          })}
-                        />
-                        <label
-                          htmlFor="confirmationEmail"
-                          className={classNames({
-                            "p-error": isFormFieldValid(meta),
-                          })}
-                        >
-                          Confirmation Email*
-                        </label>
-                      </span>
-                      {getFormErrorMessage(meta)}
-                    </div>
-                  )}
-                />
-
-                <Field
-                  name="accept"
-                  type="checkbox"
-                  render={({ input, meta }) => (
-                    <div className="field-checkbox mb-4">
-                      <Checkbox
-                        inputId="accept"
-                        {...input}
-                        className={classNames({
-                          "p-invalid": isFormFieldValid(meta),
-                        })}
-                      />
-                      <label
-                        htmlFor="accept"
-                        className={classNames({
-                          "p-error": isFormFieldValid(meta),
-                        })}
-                      >
-                        &nbsp; I agree to the terms and conditions*
-                      </label>
-                    </div>
-                  )}
-                />
-
-                <Button
-                  type="submit"
-                  label="Submit"
-                  className="mt-2"
-                  style={{ backgroundColor: "black" }}
-                />
-              </form>
-            )}
-          />
-        </div>
+                  <Button
+                    type="submit"
+                    label="Submit"
+                    className="mt-2"
+                    style={{ backgroundColor: "black" }}
+                  />
+                </form>
+              )}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
