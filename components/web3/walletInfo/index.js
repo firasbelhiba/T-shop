@@ -18,7 +18,7 @@ export default function WalletInfo({
         icon: "info",
         html:
           "<b>Metamask</b>, is not installed on your browser , please  " +
-          '<a href="https://metamask.io" target="_blank"><u>install it</u></a> ' +
+          '<a href="https://metamask.io" target="_blank" rel="noopener noreferrer"><u>install it</u></a> ' +
           "so you can connect your wallet and purchase merch .",
         showCloseButton: true,
         focusConfirm: false,

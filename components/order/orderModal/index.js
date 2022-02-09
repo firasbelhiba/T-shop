@@ -176,6 +176,7 @@ export default function OrderModal({
                         <a
                           href="https://ethereum.org/en/developers/docs/networks/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <u>link .</u>
                         </a>
@@ -190,6 +191,7 @@ export default function OrderModal({
                         <a
                           href="https://www.youtube.com/watch?v=fOGdb1CTu5c"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <u>link .</u>
                         </a>
