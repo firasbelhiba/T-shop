@@ -87,11 +87,10 @@ export default function OrderModal({
             className="pi pi-check-circle"
             style={{ fontSize: "5rem", color: "var(--green-500)" }}
           ></i>
-          <h5>Registration Successful!</h5>
+          <h5>Input confirmed!</h5>
           <p style={{ lineHeight: 1.5, textIndent: "1rem" }}>
-            Your account is registered under name <b>{formData.name}</b> ;
-            it&apos;ll be valid next 30 days without activation. Please check{" "}
-            <b>{formData.email}</b> for activation instructions.
+            Your proof of ownership is ready , you only have to confirm the
+            transaction and the merch will be yours .
           </p>
         </div>
       </Dialog>
@@ -169,10 +168,10 @@ export default function OrderModal({
                         <br />
                         This transaction will be on the Ropsten test network .
                         It means that every Ether you will spend on this
-                        transaction is fake Ether . So you won&apos;t loose any money
-                        of your pocket . It&apos;s only for demo purposes . If you
-                        want some more information on the Ropsten test network ,
-                        click on this{" "}
+                        transaction is fake Ether . So you won&apos;t loose any
+                        money of your pocket . It&apos;s only for demo purposes
+                        . If you want some more information on the Ropsten test
+                        network , click on this{" "}
                         <a
                           href="https://ethereum.org/en/developers/docs/networks/"
                           target="_blank"
@@ -183,11 +182,11 @@ export default function OrderModal({
                         <br />
                         <br />
                         Also we will use your email only for hashing purposes .
-                        That means it won&apos;t be saved in a centralized database.
-                        We need it for the creation of the zero knowledge proof
-                        that you own this merch after your finish paying the
-                        transaction . If you want to know more about the zero
-                        knowledge proof , click on this{" "}
+                        That means it won&apos;t be saved in a centralized
+                        database. We need it for the creation of the zero
+                        knowledge proof that you own this merch after your
+                        finish paying the transaction . If you want to know more
+                        about the zero knowledge proof , click on this{" "}
                         <a
                           href="https://www.youtube.com/watch?v=fOGdb1CTu5c"
                           target="_blank"
@@ -199,8 +198,8 @@ export default function OrderModal({
                         <br />
                         Every purchase will not be delivered , you will only get
                         the picture of the product that will be added to your
-                        collection with a proof . Don&apos;t forget that this website
-                        is for demo prupose .
+                        collection with a proof . Don&apos;t forget that this
+                        website is for demo prupose .
                         <br />
                         <br />
                         Thank you for your time !

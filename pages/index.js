@@ -18,7 +18,7 @@ export default function Home({ merch }) {
       MySwal.fire({
         position: "top-end",
         icon: "success",
-        title: "You are connected successfully to Metamask",
+        title: "A wallet has been detected",
         showConfirmButton: false,
         timer: 1500,
       });

@@ -21,8 +21,7 @@ export default function OwnedMerch({ merchs }) {
                 ))}
               </div>
             </div>
-            <div className="col-lg-3 col-md-12">
-              {/*sidebar widget start*/}
+            {/* <div className="col-lg-3 col-md-12">
               <aside className="sidebar_widget">
                 <div className="widget_inner">
                   <div className="widget_list widget_categories">
@@ -210,8 +209,7 @@ export default function OwnedMerch({ merchs }) {
                   </div>
                 </div>
               </aside>
-              {/*sidebar widget end*/}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
